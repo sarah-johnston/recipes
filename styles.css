@@ -1,0 +1,21 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    color: rgb(0, 153, 153);
+    font-family: Segoe UI;
+}
+
+h3 {
+    font-family: Segoe UI;
+}
+
+table {
+    font-family: sans-serif;
+}
+
+p {
+    color:black;
+    font-family: sans-serif;
+}

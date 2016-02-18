@@ -26,6 +26,7 @@
     <head>
         <meta charset="UTF-8">
         <title><?=$collection_name?></title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1><?=$collection_name?></h1>

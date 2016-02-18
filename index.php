@@ -27,6 +27,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Recipes</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Recipes</h1>
@@ -40,6 +41,11 @@
             <input type="hidden" name="id" value="<?=$recipe_id?>" />
             <input type="submit" value="<?=$recipe_name?>"/>
         </form><br />
+        <li>
+            
+        </li>
+
+        
         <?php 
             } 
         }
