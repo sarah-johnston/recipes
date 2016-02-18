@@ -16,7 +16,7 @@
                     . "u.unit_name, i.recipe_ingredient FROM ingredients i "
                     . "INNER JOIN recipe_ingredients ri "
                     . "ON i.recipe_ingredient_id=ri.recipe_ingredient_id "
-                    . "INNER JOIN units u ON ri.unit_id=u.unit_id "
+                    . "LEFT JOIN units u ON ri.unit_id=u.unit_id "
                     . "WHERE recipe_id = " .$id;
             $recipe_details = mysqli_fetch_assoc(mysqli_query($conn, $recipe_name_sql));
             $recipe_name = $recipe_details['recipe_name'];
