@@ -29,7 +29,8 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1><?=$collection_name?></h1>
+        <article>
+        <h1 id="collection-name"><?=$collection_name?></h1>
         <?php 
         if (mysqli_num_rows($recipes) > 0){
             while($row = mysqli_fetch_assoc($recipes)){
@@ -72,11 +73,12 @@
                 $recipe_name = $row['recipe_name'];
                 $recipe_method = $row['recipe_method'];
         ?>        
-        <h3>Method for <?=$recipe_name?>:</h3>
+        <h3 class="method">Method for <?=$recipe_name?>:</h3>
         <p><?=$recipe_method?></p>
         <?php
             }
         }
         ?>
+        </article>
     </body>
 </html>

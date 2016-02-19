@@ -33,9 +33,9 @@
     </head>
     <body>
         <article>
-            <h1><?=$recipe_name;?></h1>
-            <table>
-                <h3>Ingredients</h3>
+            <h1 id="recipe-name" class="title"><?=$recipe_name;?></h1>
+            <table id="ingredients">
+                <h3 class="heading" id="ingredients-heading">Ingredients</h3>
                 <?php 
                 if (mysqli_num_rows($ingredients) > 0){
                  while($row = mysqli_fetch_assoc($ingredients)){
@@ -53,8 +53,8 @@
                  }
                 ?>
             </table>
-            <h3>Method</h3>
-            <p><?=$recipe_method;?></p>
+            <h3 class="heading" id="method-heading">Method</h3>
+            <p id="method"><?=$recipe_method;?></p>
         </article>
     </body>
 </html>

@@ -30,22 +30,18 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Recipes</h1>
+        <h1 class="section" id="recipes">Recipes</h1>
+        
         <?php
         if (mysqli_num_rows($result1) > 0){
             while($row = mysqli_fetch_assoc($result1)){
                 $recipe_id = $row['recipe_id'];
                 $recipe_name = $row['recipe_name'];
         ?>
-        <form action="recipe.php" method="POST">
+        <form action="recipe.php" method="POST" class="recipes">
             <input type="hidden" name="id" value="<?=$recipe_id?>" />
-            <input type="submit" value="<?=$recipe_name?>"/>
+            <input class="recipe-link" type="submit" value="<?=$recipe_name?>"/>
         </form><br />
-        <li>
-            
-        </li>
-
-        
         <?php 
             } 
         }
@@ -53,16 +49,17 @@
             echo "0 results";
         }
         ?>
-        <h1>Recipe Collections</h1>
+        
+        <h1 class="section" id="recipe-collections">Recipe Collections</h1>
         <?php
         if (mysqli_num_rows($result2) > 0){
             while($row = mysqli_fetch_assoc($result2)){
                 $collection_id = $row['collection_id'];
                 $collection_name = $row['collection_name'];
         ?>
-        <form action="recipe-collection.php" method="POST">
+        <form action="recipe-collection.php" method="POST" class="recipe-collections">
             <input type="hidden" name="id" value="<?=$collection_id?>" />
-            <input type="submit" value="<?=$collection_name?>"/>
+            <input class="recipe-collection-link" type="submit" value="<?=$collection_name?>"/>
         </form><br />
         <?php 
             } 
@@ -71,6 +68,5 @@
             echo "0 results";
         }
         ?>
-        
     </body>
 </html>
