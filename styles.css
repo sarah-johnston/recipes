@@ -16,10 +16,14 @@ h3[class='method']{
     color: rgb(77, 77, 77);
 }
 
+h4{
+    font-family: Segoe UI;
+    color: rgb(51, 51, 153);
+}
+
 table {
     font-family: sans-serif;
-    /*color: rgb(51, 51, 51);*/
-    color: rgb(20, 25, 57);
+    color: rgb(51, 51, 51);
 }
 
 p {
