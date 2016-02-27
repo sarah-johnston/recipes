@@ -1,5 +1,9 @@
 body {
-    background-color: white;
+    background: url("resources/octopus.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1 {
@@ -42,4 +46,28 @@ input {
 input:hover {
     color: rgb(0, 102, 153);
     text-decoration: underline;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 8px 0 8px 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+li a {
+    /*display: block;*/
+    color: #000;
+    padding: 8px 16px 8px 16px;
+    text-decoration: none;
+    display: inline;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: rgb(0, 153, 153);
+    color: white;
 }

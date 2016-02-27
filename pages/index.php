@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include("DAL.php");
-        include('recipeList.php');
+        include("../helpers/DAL.php");
+        include('../helpers/recipeList.php');
         $db = new DAL();
         $recipes = new recipeList($db);
         $recipes_list = $recipes->generateRecipesList();
@@ -11,9 +11,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Recipes</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
     </head>
     <body>
+        <?php include('../templates/header.php'); ?>
         <h1 class="section" id="recipes">Recipes</h1>
         <?php
         foreach($recipes_list as $recipe_id => $recipe_name){

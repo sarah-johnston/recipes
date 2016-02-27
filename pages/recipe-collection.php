@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <?php
-    include("DAL.php");
-    include('recipeCollectionPage.php');
+    include("../helpers/DAL.php");
+    include('../helpers/recipeCollectionPage.php');
     $db = new DAL();
     $collection = new recipeCollectionPage($db);
     $collection_name = $collection->getCurrentCollectionName();
@@ -14,9 +14,10 @@
     <head>
         <meta charset="UTF-8">
         <title><?=$collection_name?></title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
     </head>
     <body>
+        <?php include('../templates/header.php'); ?>
         <article>
         <h1 id="collection-name"><?=$collection_name?></h1>
         <h3>Ingredients</h3>
@@ -26,7 +27,7 @@
             $recipe_name = $recipe["name"];
         ?>
         <table>
-            <?php include("ingredients.php")?>
+            <?php include("../templates/ingredients.php")?>
         </table>
         <?php
         }
@@ -36,7 +37,7 @@
         foreach ($collection_recipe_details as $recipe){
             $recipe_method = $recipe["method"];
             $recipe_name = $recipe["name"];
-        include("method.php");
+        include("../templates/method.php");
         }
         ?>
         </article>
