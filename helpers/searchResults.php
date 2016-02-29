@@ -9,7 +9,7 @@ class searchResults {
     function __construct($db) {
         $this->db = $db;
         $this->conn = $this->db->connectToDatabase();
-        $this->search_text = mysqli_real_escape_string($this->conn, $_GET['search_text']);
+        $this->search_text = mysqli_real_escape_string($this->conn, $_POST['search_text']);
     }
     
     function getRecipes(){
