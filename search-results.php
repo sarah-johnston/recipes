@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
     <?php 
-    include("../helpers/DAL.php"); 
-    include('../helpers/recipeList.php');
-    include('../helpers/searchResults.php');
+    include("helpers/DAL.php");
+    include('helpers/searchResults.php');
     $db = new DAL();
     $search_results = new searchResults($db);
-//    $search_text = $_POST["search-text"];
-    $recipes_list = $search_results->getRecipesSearchResults();
-    $collections_list = $search_results->getCollectionsSearchResults();
-    
+    $recipes_list = $search_results->generateRecipesList($search_results->getRecipesSearchResults());
+    $collections_list = $search_results->generateRecipeCollectionsList(
+            $search_results->getCollectionsSearchResults());
     ?>
     <head>
         <meta charset="UTF-8">
         <title>Search Results</title>
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('../templates/header.php'); ?>
+        <?php include('templates/header.php'); ?>
         <h1>Search Results</h1>
         <h2 value="<?=$search_text?>" />
         <h3 class="section" id="recipes">Recipes</h3>

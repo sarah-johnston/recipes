@@ -1,5 +1,5 @@
 body {
-    background: url("resources/octopus.png") no-repeat center center fixed;
+    background: url("octopus.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -71,7 +71,7 @@ ul.navigation-bar input:hover{
 ul.navigation-bar .search{
 }
 ul.navigation-bar .search-btn {
-    background-image: url("resources/search.png");
+    background-image: url("search.png");
     width: 30px; 
     height: 20px;
 }
@@ -125,8 +125,10 @@ form#new-recipe h3#new-recipe-name{
 table#ingredients-table, table#ingredients-table tr, 
 table#ingredients-table td, table#ingredients-table tbody{
     padding: 0;
-    table-layout: fixed;
     border: none;
+}
+table#ingredients-table{
+    border-spacing: 5px 5px;
 }
 table#ingredients-table td{
     padding-bottom: 5px;
@@ -139,6 +141,7 @@ textarea#input-recipe-method{
     height:200px;
     margin: 8px 0 8px 0;
     resize: none;
+    font-family: sans-serif;
 }
 #new-table-row{
     display: none;

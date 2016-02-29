@@ -1,4 +1,4 @@
-<script src="../jquery-1.12.1.min.js"></script>
+<script src="resources/jquery-1.12.1.min.js"></script>
 <script>
     $(function() {
         $("#add-new-ingredient").click(function(){

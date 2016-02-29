@@ -22,8 +22,7 @@ class recipeList {
         return $this->db->runQuery($this->conn, $sql);
     }
     
-    function generateRecipesList(){       
-        $recipes = self::getAllRecipes($this->conn);
+    function generateRecipesList($recipes){       
         $recipeList = array();
         if (mysqli_num_rows($recipes) > 0){
             while($row = mysqli_fetch_assoc($recipes)){
@@ -37,8 +36,7 @@ class recipeList {
         return $recipeList;
     }
     
-    function generateRecipeCollectionsList(){       
-        $collections = self::getAllRecipeCollections($this->conn);
+    function generateRecipeCollectionsList($collections){       
         $collectionsList = array();
         if (mysqli_num_rows($collections) > 0){
             while($row = mysqli_fetch_assoc($collections)){

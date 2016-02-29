@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include("../helpers/DAL.php");
-        include('../helpers/recipeList.php');
+        include("helpers/DAL.php");
+        include('helpers/recipeList.php');
         $db = new DAL();
         $recipes = new recipeList($db);
-        $recipes_list = $recipes->generateRecipesList();
-        $collections_list = $recipes->generateRecipeCollectionsList();
+        $recipes_list = $recipes->generateRecipesList($recipes->getAllRecipes());
+        $collections_list = $recipes->generateRecipeCollectionsList(
+                $recipes->getAllRecipeCollections());
         ?>
     <head>
         <meta charset="UTF-8">
         <title>Recipes</title>
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('../templates/header.php'); ?>
+        <?php include('templates/header.php'); ?>
         <h1 class="section" id="recipes">Recipes</h1>
         <?php
         foreach($recipes_list as $recipe_id => $recipe_name){

@@ -1,7 +1,8 @@
 <td>
     <select name="ingredients" id="input-recipe-ingredient">
-        <option value="sugar">Sugar</option>
-        <option value="flour">Flour</option>
+        <?php foreach ($ingredients as $ingredient) {?>
+        <option value="<?=$ingredient?>"><?=$ingredient?></option>
+        <?php }?>
     </select>
 </td>
 <td id="amount">
@@ -9,8 +10,9 @@
 </td>
 <td id="unit">
     <select name="ingredient_unit" id="input-recipe-ingredient-unit">
-        <option value="ounces">Ounces</option>
-        <option value="grams">Grams</option>
+        <?php foreach ($units as $unit) {?>
+        <option value="<?=$unit?>"><?=$unit?></option>
+        <?php }?>
     </select>
 </td>
 <td>
