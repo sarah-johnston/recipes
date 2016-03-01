@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
     <?php 
-    include("helpers/DAL.php");
+    include("templates/header.php");
     include('helpers/searchResults.php');
-    $db = new DAL();
-    $search_results = new searchResults($db);
+    $search_results = new searchResults($db, $conn);
     $recipes_list = $search_results->generateRecipesList($search_results->getRecipesSearchResults());
     $collections_list = $search_results->generateRecipeCollectionsList(
             $search_results->getCollectionsSearchResults());
@@ -15,7 +14,7 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('templates/header.php'); ?>
+        <?php include('templates/navigation-bar.php'); ?>
         <h1>Search Results</h1>
         <h2 value="<?=$search_text?>" />
         <h3 class="section" id="recipes">Recipes</h3>

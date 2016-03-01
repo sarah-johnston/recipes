@@ -1,0 +1,54 @@
+<configuration xmlns="http://logging.apache.org/log4php/">
+ 
+    <appender name="myConsoleAppender" class="LoggerAppenderConsole" />
+    
+    <appender name="myFileAppenderInfo" class="LoggerAppenderDailyFile">
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date [%logger] [%level] %message%newline" />
+        </layout>
+        <param name="file" value="logs/infoLog-%s.log" />
+        <param name="datePattern" value="Y-m-d" />
+    </appender>
+    
+    <appender name="myFileAppenderDebug" class="LoggerAppenderDailyFile">
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date [%logger] [%level] %message%newline" />
+        </layout>
+        <param name="file" value="logs/debugLog-%s.log" />
+        <param name="datePattern" value="Y-m-d" />
+    </appender>
+    
+    <logger name="general">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    <logger name="database">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    <logger name="recipeList">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    <logger name="newRecipe">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    <logger name="recipeCollectionPage">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    <logger name="recipePage">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    <logger name="searchResults">
+        <appender_ref ref="myFileAppenderInfo" />
+        <level value="INFO" />
+    </logger>
+    
+    <root>
+        <level value="DEBUG" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </root>
+</configuration>

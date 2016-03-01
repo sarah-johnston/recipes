@@ -6,9 +6,13 @@
  */
 class newRecipe {
     
-    function __construct($db) {
+    private $log;
+    private $db;
+    
+    function __construct($db, $conn) {
         $this->db = $db;
-        $this->conn = $this->db->connectToDatabase();
+        $this->conn = $conn;
+        $this->log = Logger::getLogger(__CLASS__);
     }
     
     function getAllIngredients(){

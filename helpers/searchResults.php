@@ -1,15 +1,20 @@
 <?php
-include('helpers/recipeList.php');
+include('recipeList.php');
 /**
  * Class to handle returning recipes based on search criteria.
  *
  * @author Sarah.Johnston
  */
 class searchResults extends recipeList {
+    
+    private $log;
 
-    public function __construct($db) {
-        parent::__construct($db);
-        $this->search_text = mysqli_real_escape_string($this->conn, $_POST['search_text']);
+    public function __construct($db, $conn) {
+        parent::__construct($db, $conn);
+        $this->db = $db;
+        $this->conn = $conn;
+        $this->search_text = mysqli_real_escape_string($conn, $_POST['search_text']);
+        $this->log = Logger::getLogger(__CLASS__);
     }
     
     function getRecipesSearchResults(){

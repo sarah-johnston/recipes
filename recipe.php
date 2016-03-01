@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
     <?php
-    include("helpers/DAL.php");
+    include("templates/header.php");
     include('helpers/recipePage.php');
-    $db = new DAL();
-    $recipe = new recipePage($db);
+    $recipe = new recipePage($db, $conn);
     $is_collection = False;
     $recipe_name = $recipe->getCurrentRecipeName();
     $recipe_ingredients = $recipe->getCurrentIngredients();
@@ -16,7 +15,7 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('templates/header.php'); ?>
+        <?php include('templates/navigation-bar.php'); ?>
         <article>
             <h1 id="recipe-name" class="title"><?=$recipe_name?></h1>
             <h3 class="heading" id="ingredients-heading">Ingredients</h3>

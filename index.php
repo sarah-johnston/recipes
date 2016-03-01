@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include("helpers/DAL.php");
+        include("templates/header.php");
         include('helpers/recipeList.php');
-        $db = new DAL();
-        $recipes = new recipeList($db);
+        
+        
+        $recipes = new recipeList($db, $conn);
         $recipes_list = $recipes->generateRecipesList($recipes->getAllRecipes());
         $collections_list = $recipes->generateRecipeCollectionsList(
                 $recipes->getAllRecipeCollections());
@@ -15,7 +16,7 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('templates/header.php'); ?>
+        <?php include('templates/navigation-bar.php'); ?>
         <h1 class="section" id="recipes">Recipes</h1>
         <?php
         foreach($recipes_list as $recipe_id => $recipe_name){

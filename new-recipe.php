@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include("helpers/DAL.php");
+        include("templates/header.php");
         include("helpers/newRecipe.php");
-        $db = new DAL();
-        $recipe = new newRecipe($db);
+        $recipe = new newRecipe($db, $conn);
         $ingredients = $recipe->generateIngredientsList();
         $units = $recipe->generateUnitsList();
         ?>
@@ -14,7 +13,7 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('templates/header.php'); ?>
+        <?php include('templates/navigation-bar.php'); ?>
         <h1 class="title">New Recipe</h1>
         <form id="new-recipe">
             <div id="name">

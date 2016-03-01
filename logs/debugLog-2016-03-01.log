@@ -1,0 +1,308 @@
+2016-03-01T16:24:57+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:24:57+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:24:57+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:24:57+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:24:57+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:24:57+01:00 [root] [DEBUG] Found recipes: 
+2016-03-01T16:24:57+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:24:57+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:24:57+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:24:57+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:24:57+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:24:57+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:26:15+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:26:15+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:26:15+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:26:15+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:26:15+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:15+01:00 [root] [DEBUG] Found recipes: 
+2016-03-01T16:26:15+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:26:18+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:26:18+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:26:18+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:26:18+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:26:18+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:18+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:26:18+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:26:21+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:26:21+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the name of the current recipe collection.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the name of the collection with ID '1'
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT collection_name FROM collections WHERE collection_id = 1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current collection.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Getting the IDs of the recipes included in the collection with ID '1'
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT r.recipe_id FROM recipes r INNER JOIN recipe_collections rc ON rc.recipe_id = r.recipe_id INNER JOIN collections c ON c.collection_id = rc.collection_id WHERE c.collection_id =1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Found recipes with IDs:
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Array
+(
+    [0] => 2
+    [1] => 3
+)
+
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the details of the recipes that belong to the current collection.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current collection.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Getting the IDs of the recipes included in the collection with ID '1'
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT r.recipe_id FROM recipes r INNER JOIN recipe_collections rc ON rc.recipe_id = r.recipe_id INNER JOIN collections c ON c.collection_id = rc.collection_id WHERE c.collection_id =1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Found recipes with IDs:
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Array
+(
+    [0] => 2
+    [1] => 3
+)
+
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Getting the names, methods and ingedients of the recipes with IDs:
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Array
+(
+    [0] => 2
+    [1] => 3
+)
+
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT recipe_name FROM recipes WHERE recipe_id = 2 LIMIT 1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT recipe_method FROM recipes WHERE recipe_id = 2 LIMIT 1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT ri.recipe_ingredient_amount, u.unit_name, i.recipe_ingredient FROM ingredients i INNER JOIN recipe_ingredients ri ON i.recipe_ingredient_id=ri.recipe_ingredient_id LEFT JOIN units u ON ri.unit_id=u.unit_id WHERE recipe_id = 2
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT recipe_name FROM recipes WHERE recipe_id = 3 LIMIT 1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT recipe_method FROM recipes WHERE recipe_id = 3 LIMIT 1
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Running the following query: SELECT ri.recipe_ingredient_amount, u.unit_name, i.recipe_ingredient FROM ingredients i INNER JOIN recipe_ingredients ri ON i.recipe_ingredient_id=ri.recipe_ingredient_id LEFT JOIN units u ON ri.unit_id=u.unit_id WHERE recipe_id = 3
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Found names, methods and ingredients:
+2016-03-01T16:26:21+01:00 [root] [DEBUG] Array
+(
+    [0] => Array
+        (
+            [name] => Aberystwyth chocolate icing
+            [ingredients] => Array
+                (
+                    [0] => Array
+                        (
+                            [amount] => 2
+                            [unit] => oz
+                            [ingredient] => caster sugar
+                        )
+
+                    [1] => Array
+                        (
+                            [amount] => 1
+                            [unit] => oz
+                            [ingredient] => cocoa
+                        )
+
+                    [2] => Array
+                        (
+                            [amount] => 3
+                            [unit] => oz
+                            [ingredient] => icing sugar
+                        )
+
+                    [3] => Array
+                        (
+                            [amount] => 1.5
+                            [unit] => oz
+                            [ingredient] => butter
+                        )
+
+                    [4] => Array
+                        (
+                            [amount] => 2
+                            [unit] => tbsp
+                            [ingredient] => water
+                        )
+
+                )
+
+            [method] => 1. Melt butter, water + sugar together over a low heat.<br>
+2. Pour melted butter mixture onto cocoa and icing sugar, and mix well.<br>
+3. Leave to cool completely.<br>
+        )
+
+    [1] => Array
+        (
+            [name] => Aberystwyth chocolate cake
+            [ingredients] => Array
+                (
+                    [0] => Array
+                        (
+                            [amount] => 6
+                            [unit] => oz
+                            [ingredient] => self-raising flour
+                        )
+
+                    [1] => Array
+                        (
+                            [amount] => 6
+                            [unit] => oz
+                            [ingredient] => caster sugar
+                        )
+
+                    [2] => Array
+                        (
+                            [amount] => 6
+                            [unit] => oz
+                            [ingredient] => margarine
+                        )
+
+                    [3] => Array
+                        (
+                            [amount] => 3
+                            [unit] => 
+                            [ingredient] => egg
+                        )
+
+                    [4] => Array
+                        (
+                            [amount] => 1
+                            [unit] => heaped tbsp
+                            [ingredient] => cocoa
+                        )
+
+                    [5] => Array
+                        (
+                            [amount] => 2
+                            [unit] => tbsp
+                            [ingredient] => boiling water
+                        )
+
+                )
+
+            [method] => 1. Preheat the oven to 190c or gas mark 5. Grease and line two cake tins.<br>
+2. Put the butter and sugar into a bowl and mix until light and creamy.<br>
+3. Beat in the eggs with a little of the flour.<br>
+4. Sieve in the remaining flour, and fold into the mixture.<br>
+5. Mix the cocoa and boiling water, and stir into the cake mixture. <br>
+6. Put even amounts of the mixture into the tins. Bake for about 25 minutes.<br>
+        )
+
+)
+
+2016-03-01T16:32:46+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:32:46+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:32:46+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:32:46+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:32:46+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:46+01:00 [root] [DEBUG] Found 2recipes: 
+2016-03-01T16:32:46+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:32:46+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:32:46+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:32:46+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:46+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:32:46+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:32:55+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:32:55+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:32:55+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:32:55+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:32:55+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:55+01:00 [recipeList] [INFO] Found 2recipes: 
+2016-03-01T16:32:55+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:32:55+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:32:55+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:32:55+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:55+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:32:55+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:33:03+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:33:03+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:33:03+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:33:03+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:33:03+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:03+01:00 [recipeList] [INFO] Found 2 recipes: 
+2016-03-01T16:33:03+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:33:03+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:33:03+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:33:03+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:03+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:33:03+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:33:58+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:33:58+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:33:58+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:33:58+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T16:33:58+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:33:58+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:33:58+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T16:33:58+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:33:58+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:34:12+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:34:12+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Running the following query: SELECT recipe_id, recipe_name FROM recipes
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Query ran successfully.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Array
+(
+    [2] => Aberystwyth chocolate icing
+    [3] => Aberystwyth chocolate cake
+)
+
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Running the following query: SELECT collection_id, collection_name FROM collections
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Query ran successfully.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Found recipe collections: 
+2016-03-01T16:34:12+01:00 [root] [DEBUG] Array
+(
+    [1] => Aberystwyth chocolate cake
+)
+

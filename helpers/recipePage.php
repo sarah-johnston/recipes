@@ -7,10 +7,13 @@
  */
 class recipePage {
     
-    function __construct($db) {
+    private $log;
+
+    function __construct($db, $conn) {
         $this->db = $db;
-        $this->conn = $this->db->connectToDatabase();
-        $this->id = mysqli_real_escape_string($this->conn, $_POST['id']);
+        $this->conn = $conn;
+        $this->id = mysqli_real_escape_string($conn, $_POST['id']);
+        $this->log = Logger::getLogger(__CLASS__);
     }
     
     function getRecipeName($recipe_id){

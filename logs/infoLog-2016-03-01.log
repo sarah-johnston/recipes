@@ -1,0 +1,64 @@
+2016-03-01T16:24:57+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:24:57+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:24:57+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:24:57+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:24:57+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:24:57+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:15+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:26:15+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:26:15+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:26:15+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:18+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:26:18+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:26:18+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:26:18+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:26:21+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the name of the current recipe collection.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the name of the collection with ID '1'
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current collection.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the details of the recipes that belong to the current collection.
+2016-03-01T16:26:21+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current collection.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:26:21+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:46+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:32:46+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:32:46+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:32:46+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:46+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:32:46+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:55+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:32:55+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:32:55+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:32:55+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:32:55+01:00 [recipeList] [INFO] Found 2recipes: 
+2016-03-01T16:32:55+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:32:55+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:03+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:33:03+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:33:03+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:33:03+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:03+01:00 [recipeList] [INFO] Found 2 recipes: 
+2016-03-01T16:33:03+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:33:03+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:58+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:33:58+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:33:58+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:33:58+01:00 [database] [INFO] Query ran successfully.
+2016-03-01T16:33:58+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T16:34:12+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T16:34:12+01:00 [database] [INFO] Connected successfully.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Getting all recipes from the database.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Getting all recipe collections from the database.
+2016-03-01T16:34:12+01:00 [recipeList] [INFO] Found 1 recipe collections.

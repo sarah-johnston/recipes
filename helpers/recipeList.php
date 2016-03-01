@@ -6,31 +6,38 @@
  * @author Sarah.Johnston
  */
 class recipeList {
+    
+    private $log;
 
-    public function __construct($db) {
+    public function __construct($db, $conn) {
         $this->db = $db;
-        $this->conn = $this->db->connectToDatabase();
+        $this->conn = $conn;
+        $this->log = Logger::getLogger(__CLASS__);
     }
     
     function getAllRecipes(){
+        $this->log->info("Getting all recipes from the database.");
         $sql = "SELECT recipe_id, recipe_name FROM recipes";
         return $this->db->runQuery($this->conn, $sql);
     }
     
     function getAllRecipeCollections(){
+        $this->log->info("Getting all recipe collections from the database.");
         $sql = "SELECT collection_id, collection_name FROM collections";
         return $this->db->runQuery($this->conn, $sql);
     }
     
-    function generateRecipesList($recipes){       
+    function generateRecipesList($recipes){
         $recipeList = array();
         if (mysqli_num_rows($recipes) > 0){
             while($row = mysqli_fetch_assoc($recipes)){
                 $recipeList[$row['recipe_id']] = $row['recipe_name'];
             }
-            return $recipeList;
+            $this->log->info("Found " . count($recipeList) ." recipes.");
+            $this->log->debug($recipeList);
         }
         else{
+            $this->log->info("Did not find any recipes that matched the query.");
             $recipeList[""] = "0 results";
         }
         return $recipeList;
@@ -43,9 +50,13 @@ class recipeList {
                 $collectionsList[$row['collection_id']] =
                         $row['collection_name'];
             }
+            $this->log->info("Found " . count($collectionsList) ." recipe collections.");
+            $this->log->debug("Found recipe collections: ");
+            $this->log->debug($collectionsList);
             return $collectionsList;
         }
         else{
+            $this->log->info("Did not find any recipe collections that matched the query.");
             $collectionsList[""] = "0 results";
         }
         return $collectionsList;
