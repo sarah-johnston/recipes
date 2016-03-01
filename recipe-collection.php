@@ -5,10 +5,9 @@
         include('helpers/recipeCollectionPage.php');
         $collection = new recipeCollectionPage($db, $conn);
         $collection_name = $collection->getCurrentCollectionName();
-        $collection_recipes = $collection->getCurrentCollectionRecipes();
+        $log->info("Navigated to the Recipe Collection page for '" . $collection_name . "'");
         $collection_recipe_details = $collection->getCurrentCollectionRecipesDetails();
         $is_collection = True;
-
     ?>
     <head>
         <meta charset="UTF-8">

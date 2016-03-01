@@ -3,6 +3,7 @@
     <?php
         include("templates/header.php");
         include("helpers/newRecipe.php");
+        $log->info("Navigated to the New Recipe page.");
         $recipe = new newRecipe($db, $conn);
         $ingredients = $recipe->generateIngredientsList();
         $units = $recipe->generateUnitsList();

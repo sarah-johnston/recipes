@@ -3,6 +3,7 @@
     <?php 
     include("templates/header.php");
     include('helpers/searchResults.php');
+    $log->info("Navigated to the Search Results page.");
     $search_results = new searchResults($db, $conn);
     $recipes_list = $search_results->generateRecipesList($search_results->getRecipesSearchResults());
     $collections_list = $search_results->generateRecipeCollectionsList(
@@ -16,7 +17,6 @@
     <body>
         <?php include('templates/navigation-bar.php'); ?>
         <h1>Search Results</h1>
-        <h2 value="<?=$search_text?>" />
         <h3 class="section" id="recipes">Recipes</h3>
         <?php
         foreach($recipes_list as $recipe_id => $recipe_name){

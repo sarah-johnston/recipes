@@ -16,13 +16,13 @@ class recipeList {
     }
     
     function getAllRecipes(){
-        $this->log->info("Getting all recipes from the database.");
+        $this->log->info("Getting all recipes.");
         $sql = "SELECT recipe_id, recipe_name FROM recipes";
         return $this->db->runQuery($this->conn, $sql);
     }
     
     function getAllRecipeCollections(){
-        $this->log->info("Getting all recipe collections from the database.");
+        $this->log->info("Getting all recipe collections.");
         $sql = "SELECT collection_id, collection_name FROM collections";
         return $this->db->runQuery($this->conn, $sql);
     }

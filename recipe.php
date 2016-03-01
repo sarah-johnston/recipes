@@ -3,9 +3,11 @@
     <?php
     include("templates/header.php");
     include('helpers/recipePage.php');
+    $log->info("Navigated to a Recipe page.");
     $recipe = new recipePage($db, $conn);
     $is_collection = False;
     $recipe_name = $recipe->getCurrentRecipeName();
+    $log->info("Recipe name: " . $recipe_name);
     $recipe_ingredients = $recipe->getCurrentIngredients();
     $recipe_method = $recipe->getCurrentMethod();
         ?>

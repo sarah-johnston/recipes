@@ -3,8 +3,7 @@
     <?php
         include("templates/header.php");
         include('helpers/recipeList.php');
-        
-        
+        $log->info("Navigated to the home page.");
         $recipes = new recipeList($db, $conn);
         $recipes_list = $recipes->generateRecipesList($recipes->getAllRecipes());
         $collections_list = $recipes->generateRecipeCollectionsList(

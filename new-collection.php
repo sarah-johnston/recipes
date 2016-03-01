@@ -2,6 +2,7 @@
 <html>
     <?php
         include("templates/header.php");
+        $log->info("Navigated to the New Collection page.");
     ?>
     <head>
         <meta charset="UTF-8">

@@ -18,7 +18,7 @@ class recipeCollectionPage {
     }
     
     function getCollectionName($collection_id){
-        $this->log->info("Getting the name of the collection with ID '". $collection_id . "'");
+        $this->log->debug("Getting the name of the recipe collection with ID '". $collection_id . "'");
         $sql = "SELECT collection_name FROM collections WHERE collection_id = " . $collection_id;
         return mysqli_fetch_assoc($this->db->runQuery($this->conn, $sql))['collection_name'];
     }
@@ -39,8 +39,8 @@ class recipeCollectionPage {
         while($row = mysqli_fetch_assoc($result)){
             $recipe_ids[] = $row["recipe_id"];
         }
-        $this->log->debug("Found recipes with IDs:");
-        $this->log->debug($recipe_ids);
+        $this->log->trace("Found recipes with IDs:");
+        $this->log->trace($recipe_ids);
         return $recipe_ids;
     }    
     
@@ -56,8 +56,8 @@ class recipeCollectionPage {
             array_push($recipes_details, array("name"=>$recipe_name, 
                 "ingredients"=>$recipe_ingredients, "method"=>$recipe_method));
         }
-        $this->log->debug("Found names, methods and ingredients:");
-        $this->log->debug($recipes_details);
+        $this->log->trace("Found names, methods and ingredients:");
+        $this->log->trace($recipes_details);
         return $recipes_details;
     }
     
@@ -67,12 +67,12 @@ class recipeCollectionPage {
     }
     
     function getCurrentCollectionRecipes(){
-        $this->log->info("Getting the IDs of the recipes that belong to the current collection.");
+        $this->log->info("Getting the IDs of the recipes that belong to the current recipe collection.");
         return self::getCollectionRecipes($this->id);
     }
     
     function getCurrentCollectionRecipesDetails(){
-        $this->log->info("Getting the details of the recipes that belong to the current collection.");
+        $this->log->info("Getting the details of the recipes that belong to the current recipe collection.");
         $recipe_ids = self::getCurrentCollectionRecipes();
         return self::getMultipleRecipesDetails($recipe_ids);
     }

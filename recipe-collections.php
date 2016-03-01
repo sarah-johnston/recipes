@@ -3,6 +3,7 @@
     <?php
         include("templates/header.php");
         include('helpers/recipeList.php');
+        $log->info("Navigated to the Recipe Collections page.");
         $collections = new recipeList($db, $conn);
         $collections_list = $collections->generateRecipeCollectionsList(
                 $collections->getAllRecipeCollections())
