@@ -1,0 +1,115 @@
+2016-03-01T17:44:43+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:44:43+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:44:43+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:44:43+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:44:43+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:44:43+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:44:43+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:44:52+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:44:52+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:44:52+01:00 [general] [INFO] Navigated to a Recipe page.
+2016-03-01T17:44:52+01:00 [recipePage] [INFO] Getting the name of the current Recipe.
+2016-03-01T17:44:52+01:00 [general] [INFO] Recipe name: Aberystwyth chocolate icing
+2016-03-01T17:44:52+01:00 [recipePage] [INFO] Getting the ingredients of the current Recipe.
+2016-03-01T17:44:52+01:00 [recipePage] [INFO] Getting the method of the current Recipe.
+2016-03-01T17:45:51+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:45:51+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:45:51+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:45:51+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:45:51+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:45:51+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:45:51+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:46:00+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:46:00+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:46:00+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:46:00+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:46:00+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:46:00+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:46:00+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:46:06+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:46:06+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:46:06+01:00 [general] [INFO] Navigated to a Recipe page.
+2016-03-01T17:46:06+01:00 [recipePage] [INFO] Getting the name of the current Recipe.
+2016-03-01T17:46:06+01:00 [general] [INFO] Recipe name: Aberystwyth chocolate cake
+2016-03-01T17:46:06+01:00 [recipePage] [INFO] Getting the ingredients of the current Recipe.
+2016-03-01T17:46:06+01:00 [recipePage] [INFO] Getting the method of the current Recipe.
+2016-03-01T17:46:44+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:46:44+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:46:44+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:46:44+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:46:44+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:46:44+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:46:44+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:46:45+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:46:45+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:46:45+01:00 [recipeCollectionPage] [INFO] Getting the name of the current recipe collection.
+2016-03-01T17:46:45+01:00 [general] [INFO] Navigated to the Recipe Collection page for 'Aberystwyth chocolate cake'
+2016-03-01T17:46:45+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current recipe collection.
+2016-03-01T17:46:45+01:00 [recipeCollectionPage] [INFO] Getting the details of the recipes that belong to the current recipe collection.
+2016-03-01T17:46:45+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current recipe collection.
+2016-03-01T17:48:01+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:48:01+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:48:01+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:48:01+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:48:01+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:48:01+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:48:01+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:48:03+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:48:03+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:48:03+01:00 [recipeCollectionPage] [INFO] Getting the name of the current recipe collection.
+2016-03-01T17:48:03+01:00 [general] [INFO] Navigated to the Recipe Collection page for 'Aberystwyth chocolate cake'
+2016-03-01T17:48:03+01:00 [recipeCollectionPage] [INFO] Getting the details of the recipes that belong to the current recipe collection.
+2016-03-01T17:48:03+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current recipe collection.
+2016-03-01T17:48:45+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:48:45+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:48:45+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:48:45+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:48:45+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:48:45+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:48:45+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:48:47+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:48:47+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:48:47+01:00 [recipeCollectionPage] [INFO] Getting the name of the current recipe collection.
+2016-03-01T17:48:47+01:00 [general] [INFO] Navigated to the Recipe Collection page for 'Aberystwyth chocolate cake'
+2016-03-01T17:48:47+01:00 [recipeCollectionPage] [INFO] Getting the details of the recipes that belong to the current recipe collection.
+2016-03-01T17:48:47+01:00 [recipeCollectionPage] [INFO] Getting the IDs of the recipes that belong to the current recipe collection.
+2016-03-01T17:50:50+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:50:50+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:50:50+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:50:50+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:50:50+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:50:50+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:50:50+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:50:52+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:50:52+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:50:52+01:00 [general] [INFO] Navigated to the Search Results page.
+2016-03-01T17:50:52+01:00 [searchResults] [INFO] Searched for 'a'
+2016-03-01T17:50:52+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:50:52+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:52:14+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:52:14+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:52:14+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:52:14+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:52:14+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:52:14+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:52:14+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:52:16+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:52:16+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:52:16+01:00 [general] [INFO] Navigated to the Search Results page.
+2016-03-01T17:52:16+01:00 [searchResults] [INFO] Searched for 'cake'
+2016-03-01T17:52:16+01:00 [searchResults] [INFO] Getting recipes which match the search criteria.
+2016-03-01T17:52:16+01:00 [recipeList] [INFO] Found 1 recipes.
+2016-03-01T17:52:16+01:00 [searchResults] [INFO] Getting recipe collections which match the search criteria.
+2016-03-01T17:52:16+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:58:23+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:58:23+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:58:23+01:00 [general] [INFO] Navigated to the home page.
+2016-03-01T17:58:23+01:00 [recipeList] [INFO] Getting all recipes.
+2016-03-01T17:58:23+01:00 [recipeList] [INFO] Found 2 recipes.
+2016-03-01T17:58:23+01:00 [recipeList] [INFO] Getting all recipe collections.
+2016-03-01T17:58:23+01:00 [recipeList] [INFO] Found 1 recipe collections.
+2016-03-01T17:58:24+01:00 [database] [INFO] Attempting to connect to the 'recipes' database on localhost:3306 with credentials [username: 'root' password: ''].
+2016-03-01T17:58:24+01:00 [database] [INFO] Connected successfully.
+2016-03-01T17:58:24+01:00 [general] [INFO] Navigated to the New Recipe page.
+2016-03-01T17:58:24+01:00 [newRecipe] [INFO] Getting the list of all available ingredients.
+2016-03-01T17:58:24+01:00 [newRecipe] [INFO] Getting the list of all available units.

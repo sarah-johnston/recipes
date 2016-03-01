@@ -7,20 +7,24 @@
  */
 class recipePage {
     
-    function __construct($db) {
+    private $log;
+
+    function __construct($db, $conn) {
         $this->db = $db;
-        $this->conn = $this->db->connectToDatabase();
-        $this->id = mysqli_real_escape_string($this->conn, $_POST['id']);
+        $this->conn = $conn;
+        $this->id = mysqli_real_escape_string($conn, $_POST['id']);
+        $this->log = Logger::getLogger(__CLASS__);
     }
     
     function getRecipeName($recipe_id){
+        $this->log->debug("Getting the name of the recipe with ID '". $recipe_id . "'");
         $sql = "SELECT recipe_name FROM recipes WHERE recipe_id = " 
                     .$recipe_id. " LIMIT 1";
-        $result = $this->db->runQuery($this->conn, $sql);
-        return mysqli_fetch_assoc($result)['recipe_name'];
+        return mysqli_fetch_assoc($this->db->runQuery($this->conn, $sql))['recipe_name'];
     }
     
     function getRecipeIngredients($recipe_id){
+        $this->log->debug("Getting the ingredients for the recipe with ID '". $recipe_id . "'");
         $sql = "SELECT ri.recipe_ingredient_amount, "
                     . "u.unit_name, i.recipe_ingredient FROM ingredients i "
                     . "INNER JOIN recipe_ingredients ri "
@@ -36,25 +40,33 @@ class recipePage {
                 "ingredient"=>$row['recipe_ingredient']);
             array_push($ingredients, $ingredient);
         }
+        $this->log->trace("Recipe ingredients:");
+        $this->log->trace($ingredients);
         return $ingredients;
     }
     
     function getRecipeMethod($recipe_id){
+        $this->log->debug("Getting the method for the recipe with ID '". $recipe_id . "'");
         $sql = "SELECT recipe_method FROM recipes WHERE recipe_id = " 
                     .$recipe_id. " LIMIT 1";
-        $result = $this->db->runQuery($this->conn, $sql);
-        return mysqli_fetch_assoc($result)['recipe_method'];
+        $result = mysqli_fetch_assoc($this->db->runQuery($this->conn, $sql))['recipe_method'];
+        $this->log->trace("Recipe method:");
+        $this->log->trace($result);
+        return $result;
     }
     
     function getCurrentRecipeName(){
+        $this->log->info("Getting the name of the current recipe.");
         return self::getRecipeName($this->id);
     }
     
     function getCurrentIngredients(){
+        $this->log->info("Getting the ingredients of the current recipe.");
         return self::getRecipeIngredients($this->id);
     }
     
     function getCurrentMethod(){
+        $this->log->info("Getting the method of the current recipe.");
         return self::getRecipeMethod($this->id);
     }
     

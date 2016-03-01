@@ -1,0 +1,71 @@
+<configuration xmlns="http://logging.apache.org/log4php/">
+ 
+    <appender name="myConsoleAppender" class="LoggerAppenderConsole" />
+    
+    <appender name="myFileAppenderInfo" class="LoggerAppenderDailyFile">
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date [%logger] [%level] %message%newline" />
+        </layout>
+        <param name="file" value="logs/infoLog-%s.log" />
+        <param name="datePattern" value="Y-m-d" />
+        <param name="Threshold" value="INFO"/>
+    </appender>
+    
+    <appender name="myFileAppenderDebug" class="LoggerAppenderDailyFile">
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date [%logger] [%level] %message%newline" />
+        </layout>
+        <param name="file" value="logs/debugLog-%s.log" />
+        <param name="datePattern" value="Y-m-d" />
+        <param name="Threshold" value="DEBUG"/>
+    </appender>
+    
+    <appender name="myFileAppenderTrace" class="LoggerAppenderDailyFile">
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date [%logger] [%level] %message%newline" />
+        </layout>
+        <param name="file" value="logs/traceLog-%s.log" />
+        <param name="datePattern" value="Y-m-d" />
+        <param name="Threshold" value="TRACE"/>
+    </appender>
+    
+    <logger name="general">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <logger name="database">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <logger name="recipeList">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <logger name="newRecipe">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <logger name="recipeCollectionPage">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <logger name="recipePage">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <logger name="searchResults">
+        <appender_ref ref="myFileAppenderInfo" />
+        <appender_ref ref="myFileAppenderDebug" />
+    </logger>
+    
+    <root>
+        <level value="TRACE" />
+        <appender_ref ref="myFileAppenderTrace" />
+    </root>
+</configuration>

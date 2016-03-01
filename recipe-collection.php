@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
     <?php
-    include("../helpers/DAL.php");
-    include('../helpers/recipeCollectionPage.php');
-    $db = new DAL();
-    $collection = new recipeCollectionPage($db);
-    $collection_name = $collection->getCurrentCollectionName();
-    $collection_recipes = $collection->getCurrentCollectionRecipes();
-    $collection_recipe_details = $collection->getCurrentCollectionRecipesDetails();
-    $is_collection = True;
-
+        include("templates/header.php");
+        include('helpers/recipeCollectionPage.php');
+        $collection = new recipeCollectionPage($db, $conn);
+        $collection_name = $collection->getCurrentCollectionName();
+        $log->info("Navigated to the Recipe Collection page for '" . $collection_name . "'");
+        $collection_recipe_details = $collection->getCurrentCollectionRecipesDetails();
+        $is_collection = True;
     ?>
     <head>
         <meta charset="UTF-8">
         <title><?=$collection_name?></title>
-        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('../templates/header.php'); ?>
+        <?php include('templates/navigation-bar.php'); ?>
         <article>
         <h1 id="collection-name"><?=$collection_name?></h1>
         <h3>Ingredients</h3>
@@ -27,7 +25,7 @@
             $recipe_name = $recipe["name"];
         ?>
         <table>
-            <?php include("../templates/ingredients.php")?>
+            <?php include("templates/ingredients.php")?>
         </table>
         <?php
         }
@@ -37,7 +35,7 @@
         foreach ($collection_recipe_details as $recipe){
             $recipe_method = $recipe["method"];
             $recipe_name = $recipe["name"];
-        include("../templates/method.php");
+        include("templates/method.php");
         }
         ?>
         </article>
