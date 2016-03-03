@@ -6,7 +6,7 @@
         $log->info("Navigated to the Recipe Collections page.");
         $collections = new recipeList($db, $conn);
         $collections_list = $collections->generateRecipeCollectionsList(
-                $collections->getAllRecipeCollections())
+                $collections->getAllRecipeCollections());
         ?>
     <head>
         <meta charset="UTF-8">

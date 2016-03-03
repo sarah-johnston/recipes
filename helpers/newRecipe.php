@@ -17,13 +17,13 @@ class newRecipe {
     
     function getAllIngredients(){
         $this->log->info("Getting the list of all available ingredients.");
-        $sql = "SELECT recipe_ingredient FROM ingredients";
+        $sql = "SELECT recipe_ingredient, recipe_ingredient_id FROM ingredients";
         return $this->db->runQuery($this->conn, $sql);
     }
     
     function getAllUnits(){
         $this->log->info("Getting the list of all available units.");
-        $sql = "SELECT unit_name FROM units";
+        $sql = "SELECT unit_name, unit_id FROM units";
         return $this->db->runQuery($this->conn, $sql);
     }
     
@@ -32,7 +32,7 @@ class newRecipe {
         $ingredients = array();
         if (mysqli_num_rows($ingredients_list) > 0){
             while($row = mysqli_fetch_assoc($ingredients_list)){
-                array_push($ingredients, $row['recipe_ingredient']);
+                $ingredients[$row['recipe_ingredient_id']] = $row['recipe_ingredient'];
             }
             $this->log->trace("Found ingredients:");
             $this->log->trace($ingredients);
@@ -49,7 +49,7 @@ class newRecipe {
         $units = array("None");
         if (mysqli_num_rows($units_list) > 0){
             while($row = mysqli_fetch_assoc($units_list)){
-                array_push($units, $row['unit_name']);
+                $units[$row['unit_id']] = $row['unit_name'];
             }
             $this->log->trace("Found units:");
             $this->log->trace($units);

@@ -93,13 +93,25 @@ form#new-recipe input.ingredient-amount,
 form#new-recipe input.delete-ingredient{
     margin-bottom: 0;
 }
+form#new-recipe input.ingredient-amount:hover,
+form#new-recipe input#input-recipe-name:hover{
+    color: #000;
+    text-decoration: none;
+}
 form#new-recipe input#add-new-ingredient{
     margin-top: 8px;
 }
 form#new-recipe input#add-new-ingredient,
-form#new-recipe input.delete-ingredient{
+form#new-recipe input.delete-ingredient,
+button#create-ingredient{
     color: white;
     background-color: rgb(0, 153, 153);
+}
+button#create-ingredient{
+    color: white;
+    background-color: rgb(0, 153, 153);
+    border: none;
+    padding: 4px 2px 4px 2px;
 }
 form#new-recipe input#submit-new-recipe{
     color: white;
@@ -146,4 +158,6 @@ textarea#input-recipe-method{
 #new-table-row{
     display: none;
 }
-
+#new-table-row input{
+    display: none;
+}
