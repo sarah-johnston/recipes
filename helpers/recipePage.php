@@ -60,6 +60,11 @@ class recipePage {
         return self::getRecipeName($this->id);
     }
     
+    function getCurrentRecipeId(){
+        $this->log->info("Getting the ID of the current recipe.");
+        return $this->id;
+    }
+    
     function getCurrentIngredients(){
         $this->log->info("Getting the ingredients of the current recipe.");
         return self::getRecipeIngredients($this->id);

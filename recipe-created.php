@@ -1,6 +1,7 @@
 <html>
     <?php
         include("templates/header.php");
+        include("helpers/newRecipe.php");
         $log->info("Navigated to the Recipe Created page.");
         ?>
     <head>
@@ -16,7 +17,8 @@
                 $log->info("Recipe name: " . $recipe_name);
             }
             if(!empty($_POST["recipe_method"])){
-                $recipe_method = $_POST["recipe_method"];
+                $method = $_POST["recipe_method"];
+                $recipe_method = nl2br($method);
                 $log->info("Recipe method: " . $recipe_method);
             }
             if(!empty($_POST["ingredients"])){
@@ -39,40 +41,17 @@
                 $ingredients_details = array($ingredients, $amounts, $units);
                 $log->info($ingredients_details);
             }
-            if((isset($recipe_name)) && (isset($recipe_method)))
-            {
-                $sql = "INSERT INTO recipes (recipe_name, recipe_method) VALUES ('" . $recipe_name . "', '" . $recipe_method . "');";
-                $db->runQuery($conn, $sql);
-                $recipe_id = $conn->insert_id;
-                $log->info("ID of the new recipe:");
-                $log->info($recipe_id);
-            }
-            if(isset($ingredients_details)){
-            for ($i = 0; $i < count($ingredients_details[0]); $i++) {
-                $ingredient_id = $ingredients_details[0][$i];
-                $log->info("Ingredient id:");
-                $log->info($ingredient_id);
-
-                $amount = $ingredients_details[1][$i];
-                $log->info("Amount:");
-                $log->info($amount);
-
-                $unit_id = $ingredients_details[2][$i];
-                $log->info("Unit id:");
-                $log->info($unit_id);
-                
-                $sql = "INSERT INTO recipe_ingredients (recipe_id, 
-                    recipe_ingredient_id, recipe_ingredient_amount, unit_id)
-                    VALUES('" . $recipe_id . "', '" . $ingredient_id . "', '" . $amount . "', '" . $unit_id . "');";
-                $db->runQuery($conn, $sql);
-             }
-            }
             
+            $new_recipe = new newRecipe($db, $conn);
+            $recipe_id = $new_recipe->addNewRecipe($recipe_name, $ingredients_details, $method);
             }
-            
-    //handle the form input here
-    //and redirect to the new recipe page?
     ?>
+        <form action='recipe.php' method='POST' name='frm'>
+            <input type="hidden" name="id" value="<?=$recipe_id?>" />
+        </form>
+        <script language="JavaScript">
+        document.frm.submit();
+        </script>
         <h1>Recipe Created</h1>
     </body>
 </html>

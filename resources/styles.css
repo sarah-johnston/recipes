@@ -28,7 +28,12 @@ input {
   font-size: 16px;
   margin-bottom: 5px;
   display: block;
+  border-radius: 3px;
 }
+button{
+  border-radius: 3px;  
+}
+
 input:hover {
     color: rgb(0, 102, 153);
     text-decoration: underline;
@@ -94,7 +99,9 @@ form#new-recipe input.delete-ingredient{
     margin-bottom: 0;
 }
 form#new-recipe input.ingredient-amount:hover,
-form#new-recipe input#input-recipe-name:hover{
+form#new-recipe input#input-recipe-name:hover,
+form#new-recipe input#new-ingredient-name:hover,
+form#new-recipe input#new-unit-name:hover{
     color: #000;
     text-decoration: none;
 }
@@ -107,6 +114,12 @@ button#create-ingredient{
     color: white;
     background-color: rgb(0, 153, 153);
 }
+form#new-recipe input#add-new-ingredient:hover,
+form#new-recipe input.delete-ingredient:hover,
+button#create-ingredient{
+    text-decoration: none;
+    background-color: rgb(0, 102, 153);
+}
 button#create-ingredient{
     color: white;
     background-color: rgb(0, 153, 153);
@@ -116,6 +129,10 @@ button#create-ingredient{
 form#new-recipe input#submit-new-recipe{
     color: white;
     background-color: rgb(0, 102, 153);
+}
+form#new-recipe input#submit-new-recipe:hover{
+    text-decoration: none;
+    background-color: rgb(0, 153, 153);
 }
 form#new-recipe input.ingredient-amount{
     width: 50px;
@@ -160,4 +177,59 @@ textarea#input-recipe-method{
 }
 #new-table-row input{
     display: none;
+}
+
+div#name p#recipe-name-required,
+form#new-recipe p#recipe-amounts-required{
+    color: red;
+    display: none;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+button#create-ingredient:hover{
+    border-radius: 3px;
+    background-color: rgb(0, 102, 153);
+}
+
+div#new-ingredient-ninja,
+div#new-unit-ninja{
+    display: none;
+}
+
+form#new-recipe button{
+    color: white;
+    border: medium none;
+    padding: 4px 2px;
+    background-color: rgb(0, 153, 153);
+}
+form#new-recipe button:hover{
+    text-decoration: none;
+    background-color: rgb(0, 102, 153);
+}
+
+input#new-unit-name,
+input#new-ingredient-name{
+    margin-top: 10px;
+}
+
+/******************************
+* Recipes
+******************************/
+div#recipe{
+    width: 700px;   
+}
+
+div#recipe button#recipe-options{
+    float: right;
+}
+
+button#delete-recipe{
+    color: white;
+    background-color: rgb(0, 102, 153);
+    border: none;
+    padding: 4px 2px 4px 2px;
+}
+button#delete-recipe:hover{
+    background-color: rgb(0, 153, 153);
 }

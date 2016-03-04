@@ -62,4 +62,41 @@ class newRecipe {
         return $units;
     }
     
+    function addNewRecipe($recipe_name, $ingredients, $method){
+        
+        $recipe_id = self::addRecipeNameAndMethod($recipe_name, $method);
+        self::addRecipeIngredients($recipe_id, $ingredients);
+        return $recipe_id;
+    }
+    
+    private function addRecipeNameAndMethod($recipe_name, $method){
+        $sql = "INSERT INTO recipes (recipe_name, recipe_method) VALUES ('" . $recipe_name . "', '" . $method . "');";
+        $this->db->runQuery($this->conn, $sql);
+        $recipe_id = $this->conn->insert_id;
+        $this->log->info("ID of the new recipe:");
+        $this->log->info($recipe_id);
+        return $recipe_id;
+    }
+    
+    private function addRecipeIngredients($recipe_id, $ingredients){
+        for ($i = 0; $i < count($ingredients[0]); $i++) {
+            $ingredient_id = $ingredients[0][$i];
+            $this->log->info("Ingredient id:");
+            $this->log->info($ingredient_id);
+
+            $amount = $ingredients[1][$i];
+            $this->log->info("Amount:");
+            $this->log->info($amount);
+
+            $unit_id = $ingredients[2][$i];
+            $this->log->info("Unit id:");
+            $this->log->info($unit_id);
+
+            $sql = "INSERT INTO recipe_ingredients (recipe_id, 
+                recipe_ingredient_id, recipe_ingredient_amount, unit_id)
+                VALUES('" . $recipe_id . "', '" . $ingredient_id . "', '" . $amount . "', '" . $unit_id . "');";
+            $this->db->runQuery($this->conn, $sql);
+        }
+    }
+    
 }
