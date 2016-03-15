@@ -12,75 +12,10 @@
         <meta charset="UTF-8">
         <title>New Recipe</title>
         <link rel="stylesheet" href="resources/styles.css">
-        <script>
-        function validateForm(){
-            var name_valid = validateName();
-            var amounts_valid = validateAmounts();
-            
-            return (name_valid && amounts_valid);
-        }
-        
-        function showIngredientNinja(){
-            ingredient = document.getElementById('new-ingredient-name').value = "";
-            document.getElementById('new-ingredient-ninja').style.display='inline';
-        }
-        function hideIngredientNinja(){
-            unit = document.getElementById('new-unit-name').value = "";
-            document.getElementById('new-ingredient-ninja').style.display='none';
-        }
-        function showUnitNinja(){
-            document.getElementById('new-unit-ninja').style.display='inline';
-        }
-        function hideUnitNinja(){
-            document.getElementById('new-unit-ninja').style.display='none';
-        }
-        function addIngredient(){
-            ingredient = document.getElementById('new-ingredient-name').value;
-            alert(ingredient);
-        }
-        function addUnit(){
-            unit = document.getElementById('new-unit-name').value;
-            alert(unit);
-        }
-        
-        function validateName(){
-            var recipe_name = document.getElementById('input-recipe-name').value;
-            if((recipe_name === "") || (recipe_name === null)){
-                document.getElementById('recipe-name-required').style.display='inline';
-                document.getElementById('input-recipe-name').style.background = "rgb(255, 204, 204)";
-                return false;
-            }
-            else{
-                document.getElementById('recipe-name-required').style.display='none';
-                document.getElementById('input-recipe-name').style.background = "#f1f1f1";
-                return true;
-            }
-            
-        }
-        function validateAmounts(){
-            var amounts = document.querySelectorAll('#new-recipe .ingredient-amount');
-            var amounts_valid = true;
-            for (var i = 0; i < amounts.length; i++) {
-                if((amounts[i].value === "")||(amounts[i].value === null)){ //|| isNaN(amounts[i])){    //this is failing! whyyy?
-                    amounts[i].style.background = "rgb(255, 204, 204)";
-                    amounts_valid = false;
-                }
-                else{
-                    amounts[i].style.background = "#f1f1f1";
-                }
-            }
-            if(!amounts_valid){
-                document.getElementById('recipe-amounts-required').style.display='inline';
-            }
-            else{
-                document.getElementById('recipe-amounts-required').style.display='none';
-            }
-            return amounts_valid;
-        }
-        
-        </script>
+        <script src="resources/newRecipeHelpers.js"></script>
     </head>
     <body>
+        <div id="overlay"></div>
         <?php include('templates/navigation-bar.php'); ?>
         <h1 class="title">New Recipe</h1>
         <form id="new-recipe" name="new-recipe-form" action="recipe-created.php" method="POST" onsubmit="return validateForm();">
@@ -99,20 +34,31 @@
             <!--might need to be a form. -->
             <!-- also might need to change the ingredient dropdowns to use javascript so new ingredients are added without reload-->
             <div id="new-ingredient-ninja">
-                <br/>
+                <h3>Add a new ingredient</h3>
                 Ingredient:
-                <input type="text" name="new_ingredient_name" id="new-ingredient-name">
+                <input type="text" name="new_ingredient_name" id="new-ingredient-name"><br/>   
+                Plural of ingredient:
+                <input type="text" name="new_ingredient_name_plural" id="new-ingredient-name-plural"><br/>   
                 <button type="button" onclick="addIngredient($().value)">Add</button>
                 <button type="button" onclick="hideIngredientNinja()">Cancel</button>
             </div>
             <div id="new-unit-ninja">
-                <br/>
+                <h3>Add a new unit</h3>
                 Unit:
                 <input type="text" name="new_unit_name" id="new-unit-name">
+                <br/>
+                Unit type:
+                <select id="new-unit-type" name="new_unit_type">
+                    <option value="volume">Volume</option>
+                    <option value="mass">Mass</option>
+                </select>
+                <br/>   
+                Unit to SI amount:
+                <input type="text" name="new_unit_to_si" id="new-unit-to-si">
+                <br/>   
                 <button type="button" onclick="addUnit()">Add</button>
                 <button type="button" onclick="hideUnitNinja()">Cancel</button>
             </div>
-
             <h3 class="new-recipe-method">Method:</h3>
             <textarea name="recipe_method" id="input-recipe-method"></textarea>
             <input type="submit" name="submit" value="Submit" id="submit-new-recipe" onclick="removeHiddenElements()">

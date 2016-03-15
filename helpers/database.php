@@ -18,8 +18,12 @@ class database {
         $this->port = 3306;
 	}
         
+    /**
+     * Creates connection to the database with the given credentials.
+     * 
+     * @return \mysqli : database connection.
+     */    
     public function connectToDatabase(){
-        // create connection
         $this->log = Logger::getLogger(__CLASS__);
             $this->log->info("Attempting to connect to the '"
                 . $this->database . "' database on " . $this->servername .
@@ -43,7 +47,15 @@ class database {
             }
         }
         
+    /**
+     * Runs a sql query against the database and returns the result.
+     * 
+     * @param type $conn : Database connection.
+     * @param type $sql : SQL query.
+     * @return type : Results of the query.
+     */
     function runQuery($conn, $sql){
+        
         $this->log->debug("Running the following query: " . $sql);
         $result = $conn->query($sql);
         if (!$sql) {

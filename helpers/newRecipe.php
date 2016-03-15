@@ -15,18 +15,33 @@ class newRecipe {
         $this->log = Logger::getLogger(__CLASS__);
     }
     
+    /**
+     * Returns all available ingredients in the database.
+     * 
+     * @return type : Array of all ingredient IDs and names in the database.
+     */
     function getAllIngredients(){
         $this->log->info("Getting the list of all available ingredients.");
         $sql = "SELECT recipe_ingredient, recipe_ingredient_id FROM ingredients";
         return $this->db->runQuery($this->conn, $sql);
     }
     
+    /**
+     * Returns all available units in the database.
+     * 
+     * @return type : Array of all unit IDs and names in the database.
+     */
     function getAllUnits(){
         $this->log->info("Getting the list of all available units.");
         $sql = "SELECT unit_name, unit_id FROM units";
         return $this->db->runQuery($this->conn, $sql);
     }
     
+    /**
+     * Returns a list of all available ingredients and their IDs.
+     * 
+     * @return type : Array of all ingredient IDs and names in the database.
+     */
     function generateIngredientsList(){
         $ingredients_list = self::getAllIngredients();
         $ingredients = array();
@@ -44,7 +59,13 @@ class newRecipe {
         }
     }
         
+    /**
+     * Returns a list of all available units and their IDs.
+     * 
+     * @return type : Array of all unit IDs and names in the database.
+     */
     function generateUnitsList(){
+        // Generate the list of all available units.
         $units_list = self::getAllUnits();
         $units = array("None");
         if (mysqli_num_rows($units_list) > 0){
@@ -62,13 +83,28 @@ class newRecipe {
         return $units;
     }
     
+    /**
+     * Adds a new recipe to the database.
+     * 
+     * @param type $recipe_name : Name of the new recipe.
+     * @param type $ingredients : Ingredients in the new recipe.
+     * @param type $method : Method for the new recipe.
+     * @return type : ID of the new recipe.
+     */
     function addNewRecipe($recipe_name, $ingredients, $method){
-        
         $recipe_id = self::addRecipeNameAndMethod($recipe_name, $method);
         self::addRecipeIngredients($recipe_id, $ingredients);
         return $recipe_id;
     }
     
+    /**
+     * Helper funtion which adds the name and method of a new recipe to the 
+     * database, and returns the ID of the new recipe.
+     * 
+     * @param type $recipe_name : Name of the new recipe.
+     * @param type $method : Method for the new recipe.
+     * @return type : ID of the new recipe.
+     */
     private function addRecipeNameAndMethod($recipe_name, $method){
         $sql = "INSERT INTO recipes (recipe_name, recipe_method) VALUES ('" . $recipe_name . "', '" . $method . "');";
         $this->db->runQuery($this->conn, $sql);
@@ -78,7 +114,13 @@ class newRecipe {
         return $recipe_id;
     }
     
+    /**
+     * Helper function which adds the ingredients of a new 
+     * @param type $recipe_id
+     * @param type $ingredients
+     */
     private function addRecipeIngredients($recipe_id, $ingredients){
+        // Helper function to add the ingredients of the new recipe to the database, given the recipe id.
         for ($i = 0; $i < count($ingredients[0]); $i++) {
             $ingredient_id = $ingredients[0][$i];
             $this->log->info("Ingredient id:");
@@ -99,4 +141,23 @@ class newRecipe {
         }
     }
     
+    function addNewIngredient($ingredient_name, $ingredient_name_plural){
+        // Adds a new ingredient to the database.
+        $sql = "INSERT INTO ingredients (recipe_ingredient, recipe_ingredient_plural) VALUES ('" . $ingredient_name . "', '" . $ingredient_name_plural . "');";
+        $this->db->runQuery($this->conn, $sql);
+        $ingredient_id = $this->conn->insert_id;
+        $this->log->info("ID of the new ingredient:");
+        $this->log->info($ingredient_id);
+        return $ingredient_id;
+    }
+    
+    function addNewUnit($unit_name, $unit_type, $unit_to_si){
+        // Adds a new unit to the database.
+        $sql = "INSERT INTO units (unit_name, unit_type_id, unit_to_si_amount) VALUES ('" . $unit_name . "', '" . $unit_type . "', '" . $unit_to_si . "');";
+        $this->db->runQuery($this->conn, $sql);
+        $unit_id = $this->conn->insert_id;
+        $this->log->info("ID of the new unit:");
+        $this->log->info($unit_id);
+        return $unit_id;
+    }
 }
