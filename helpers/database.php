@@ -18,8 +18,12 @@ class database {
         $this->port = 3306;
 	}
         
+    /**
+     * Creates connection to the database with the given credentials.
+     * 
+     * @return \mysqli : database connection.
+     */    
     public function connectToDatabase(){
-        // create connection
         $this->log = Logger::getLogger(__CLASS__);
             $this->log->info("Attempting to connect to the '"
                 . $this->database . "' database on " . $this->servername .
@@ -27,7 +31,7 @@ class database {
                 "username: '" . $this->username . 
                 "' password: '" .  $this->password . "']."
                 );
-        $conn = mysqli_connect($this->servername, $this->username, $this->password, 
+        $conn = new mysqli($this->servername, $this->username, $this->password, 
                     $this->database, $this->port);
 
             // check connection
@@ -43,12 +47,19 @@ class database {
             }
         }
         
+    /**
+     * Runs a sql query against the database and returns the result.
+     * 
+     * @param type $conn : Database connection.
+     * @param type $sql : SQL query.
+     * @return type : Results of the query.
+     */
     function runQuery($conn, $sql){
+        
         $this->log->debug("Running the following query: " . $sql);
-        $result = mysqli_query($conn, $sql);
+        $result = $conn->query($sql);
         if (!$sql) {
             $error = mysqli_error($conn);
-            $warnings = mysqli_warning_count($conn);
             $error = "Connection failed with error: " . mysqli_connect_error();
             $this->log->info($error);
             die($error);

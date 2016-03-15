@@ -15,7 +15,9 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
-        <?php include('templates/navigation-bar.php'); ?>
+        <?php
+        include('templates/navigation-bar.php'); 
+        ?>
         <h1 class="section" id="recipes">Recipes</h1>
         <?php
         foreach($recipes_list as $recipe_id => $recipe_name){

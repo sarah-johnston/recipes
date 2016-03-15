@@ -49,7 +49,8 @@ class recipePage {
         $this->log->debug("Getting the method for the recipe with ID '". $recipe_id . "'");
         $sql = "SELECT recipe_method FROM recipes WHERE recipe_id = " 
                     .$recipe_id. " LIMIT 1";
-        $result = mysqli_fetch_assoc($this->db->runQuery($this->conn, $sql))['recipe_method'];
+        $result = nl2br(mysqli_fetch_assoc($this->db->runQuery($this->conn, $sql))['recipe_method']);
+        
         $this->log->trace("Recipe method:");
         $this->log->trace($result);
         return $result;
@@ -58,6 +59,11 @@ class recipePage {
     function getCurrentRecipeName(){
         $this->log->info("Getting the name of the current recipe.");
         return self::getRecipeName($this->id);
+    }
+    
+    function getCurrentRecipeId(){
+        $this->log->info("Getting the ID of the current recipe.");
+        return $this->id;
     }
     
     function getCurrentIngredients(){

@@ -18,14 +18,19 @@
     </head>
     <body>
         <?php include('templates/navigation-bar.php'); ?>
-        <article>
-            <h1 id="recipe-name" class="title"><?=$recipe_name?></h1>
+        <div id="recipe">
+            <h1 id="recipe-name" class="title"><?=$recipe_name?>
+            </h1>
             <h3 class="heading" id="ingredients-heading">Ingredients</h3>
             <table id="ingredients">
                 <?php include("templates/ingredients.php")?>
             </table>
             <h3 class="heading" id="method-heading">Method</h3>
             <?php include("templates/method.php")?>
-        </article>
+            <form action="recipe-deleted.php" method="POST" onSubmit="return confirm('Are you sure you want to delete this recipe?')">
+                <input type="hidden" name="delete_recipe" value="<?=$recipe->getCurrentRecipeId()?>" />
+               <button id="delete-recipe" type="submit" name="submit">Delete recipe</button>
+            </form>
+        </div>
     </body>
 </html>

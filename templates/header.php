@@ -8,3 +8,4 @@
         $conn = $db->connectToDatabase();
     }
 ?>
+<link rel="icon" type="image/ico" href="resources/octopus-icon.png">

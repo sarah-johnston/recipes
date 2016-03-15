@@ -28,7 +28,12 @@ input {
   font-size: 16px;
   margin-bottom: 5px;
   display: block;
+  border-radius: 3px;
 }
+button{
+  border-radius: 3px;  
+}
+
 input:hover {
     color: rgb(0, 102, 153);
     text-decoration: underline;
@@ -93,17 +98,41 @@ form#new-recipe input.ingredient-amount,
 form#new-recipe input.delete-ingredient{
     margin-bottom: 0;
 }
+form#new-recipe input.ingredient-amount:hover,
+form#new-recipe input#input-recipe-name:hover,
+form#new-recipe input#new-ingredient-name:hover,
+form#new-recipe input#new-unit-name:hover{
+    color: #000;
+    text-decoration: none;
+}
 form#new-recipe input#add-new-ingredient{
     margin-top: 8px;
 }
 form#new-recipe input#add-new-ingredient,
-form#new-recipe input.delete-ingredient{
+form#new-recipe input.delete-ingredient,
+button#create-ingredient{
     color: white;
     background-color: rgb(0, 153, 153);
+}
+form#new-recipe input#add-new-ingredient:hover,
+form#new-recipe input.delete-ingredient:hover,
+button#create-ingredient{
+    text-decoration: none;
+    background-color: rgb(0, 102, 153);
+}
+button#create-ingredient{
+    color: white;
+    background-color: rgb(0, 153, 153);
+    border: none;
+    padding: 4px 2px 4px 2px;
 }
 form#new-recipe input#submit-new-recipe{
     color: white;
     background-color: rgb(0, 102, 153);
+}
+form#new-recipe input#submit-new-recipe:hover{
+    text-decoration: none;
+    background-color: rgb(0, 153, 153);
 }
 form#new-recipe input.ingredient-amount{
     width: 50px;
@@ -146,4 +175,82 @@ textarea#input-recipe-method{
 #new-table-row{
     display: none;
 }
+#new-table-row input{
+    display: none;
+}
 
+div#name p#recipe-name-required,
+form#new-recipe p#recipe-amounts-required{
+    color: red;
+    display: none;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+button#create-ingredient:hover{
+    border-radius: 3px;
+    background-color: rgb(0, 102, 153);
+}
+
+div#new-ingredient-ninja,
+div#new-unit-ninja{
+    position: absolute;
+    display: none;
+    z-index: 3;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
+}
+
+form#new-recipe button{
+    color: white;
+    border: medium none;
+    padding: 4px 2px;
+    background-color: rgb(0, 153, 153);
+}
+form#new-recipe button:hover{
+    text-decoration: none;
+    background-color: rgb(0, 102, 153);
+}
+
+input#new-unit-name,
+input#new-ingredient-name{
+    margin-top: 10px;
+}
+
+/******************************
+* Recipes
+******************************/
+div#recipe{
+    width: 700px;   
+}
+
+div#recipe button#recipe-options{
+    float: right;
+}
+
+button#delete-recipe{
+    color: white;
+    background-color: rgb(0, 102, 153);
+    border: none;
+    padding: 4px 2px 4px 2px;
+}
+button#delete-recipe:hover{
+    background-color: rgb(0, 153, 153);
+}
+
+
+/*************************************
+*   Overlay
+**************************************/
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 2;
+    display: none;
+}

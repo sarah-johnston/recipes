@@ -16,7 +16,7 @@
     </head>
     <body>
         <?php include('templates/navigation-bar.php'); ?>
-        <article>
+        <div>
         <h1 id="collection-name"><?=$collection_name?></h1>
         <h3>Ingredients</h3>
         <?php 
@@ -38,6 +38,6 @@
         include("templates/method.php");
         }
         ?>
-        </article>
+        </div>
     </body>
 </html>

@@ -2,9 +2,8 @@
 <script>
     $(function() {
         $("#add-new-ingredient").click(function(){
-            var new_row = $('#new-table-row').clone().show()
-                    .appendTo('#ingredients-table').removeAttr('id')
-                    .removeAttr('style');
+        $('#new-table-row').clone().show().appendTo('#ingredients-table')
+                    .removeAttr('id').removeAttr('style');
         }); 
         $("#ingredients-table").on('click','.delete-ingredient',function(){
             $(this).closest('tr').remove();
@@ -20,9 +19,6 @@
     <tr class="new-ingredient">
         <?php include("new-ingredient-row.php")?>
     </tr>
-    <tr id="new-table-row" class="new-ingredient">
-        <?php include("new-ingredient-row.php")?>
-    </tr>
-</table>
-<input type="button" value="Add Ingredient" id="add-new-ingredient" />
+ </table>
+<input type="button" value="Add" id="add-new-ingredient" />
 <br>
