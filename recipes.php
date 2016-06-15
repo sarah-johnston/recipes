@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
+        <div id="recipes-list-page">
         <?php include('templates/navigation-bar.php'); ?>
         <h1 class="title" id="recipes">Recipes</h1>
         <?php
@@ -25,5 +26,6 @@
         <?php 
         }
         ?>        
+        </div>
     </body>
 </html>

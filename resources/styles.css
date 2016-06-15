@@ -30,6 +30,12 @@ input {
   display: block;
   border-radius: 3px;
 }
+input:focus{
+    outline:0;
+}
+textarea:focus{
+    outline:0;
+}
 button{
   border-radius: 3px;  
 }
@@ -38,6 +44,25 @@ input:hover {
     color: rgb(0, 102, 153);
     text-decoration: underline;
 }
+/*************************
+* Recipes List Page      *
+**************************/
+div#recipes-list-page input:hover{
+    cursor:pointer;
+}
+/*********************************
+* Recipes Collections List Page  *
+*********************************/
+div#recipe-collections-page input:hover{
+    cursor:pointer;
+}
+/********************
+* Home Page         *
+********************/
+div#home-page input:hover{
+    cursor:pointer;
+}
+
 
 /****************************
  * Header-specific things   *
@@ -79,6 +104,9 @@ ul.navigation-bar .search-btn {
     background-image: url("search.png");
     width: 30px; 
     height: 20px;
+}
+ul.navigation-bar .search-btn:hover{
+    cursor: pointer;
 }
 
 /***********

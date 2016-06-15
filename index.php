@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="resources/styles.css">
     </head>
     <body>
+        <div id="home-page">
         <?php
         include('templates/navigation-bar.php'); 
         ?>
@@ -40,5 +41,6 @@
         <?php 
         } 
         ?>
+        </div>
     </body>
 </html>
