@@ -16,5 +16,5 @@
         </select>
     </td>
     <td>
-        <input type="button" value="Delete" class="delete-ingredient" />
+        <div class="delete-ingredient">x</div>
     </td>

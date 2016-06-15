@@ -1,4 +1,3 @@
-
 function validateForm(){
     var name_valid = validateName();
     var amounts_valid = validateAmounts();
@@ -6,28 +5,28 @@ function validateForm(){
     return (name_valid && amounts_valid);
 }
 
-function showIngredientNinja(){
+function showIngredientForm(){
     ingredient = document.getElementById('new-ingredient-name').value = "";
     ingredient_plural = document.getElementById('new-ingredient-name-plural').value = "";
-    document.getElementById('new-ingredient-ninja').style.display = 'inline';
+    document.getElementById('new-ingredient-form').style.display = 'inline';
     document.getElementById('overlay').style.display = 'inline';
 }
 
-function hideIngredientNinja(){
-    document.getElementById('new-ingredient-ninja').style.display = 'none';
+function hideIngredientForm(){
+    document.getElementById('new-ingredient-form').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
 
-function showUnitNinja(){
+function showUnitForm(){
     unit = document.getElementById('new-unit-name').value = "";
     unit = document.getElementById('new-unit-to-si').value = "";
     unit = document.getElementById('new-unit-type').selectedIndex = 0;
-    document.getElementById('new-unit-ninja').style.display = 'inline';
+    document.getElementById('new-unit-form').style.display = 'inline';
     document.getElementById('overlay').style.display = 'inline';
 }
 
-function hideUnitNinja(){
-    document.getElementById('new-unit-ninja').style.display='none';
+function hideUnitForm(){
+    document.getElementById('new-unit-form').style.display='none';
     document.getElementById('overlay').style.display = 'none';
 }
 
@@ -44,7 +43,7 @@ function addUnit(){
                 unit_to_si : unit_to_si
             },
             success: function(){
-                hideUnitNinja();
+                hideUnitForm();
                 refreshUnitDropdown();
             }
         });
@@ -61,7 +60,7 @@ function addIngredient(){
                 ingredient_plural : ingredient_plural
             },
             success: function(){
-                hideIngredientNinja();
+                hideIngredientForm();
                 refreshIngredientDropdown();
             }
         });
@@ -115,12 +114,21 @@ function refreshUnitDropdown(){
         });
 }
 function refreshIngredientDropdown(){
+        var selectedItems = [];
+        var ingredientElements = [];
+        $(".input-recipe-ingredient").each(function(){
+            selectedItems.push($(this).val());
+            ingredientElements.push($(this));
+        });      
         $.ajax({
             type: 'POST',
             url: 'reload-ingredients-dropdown.php',
             dataType: 'html',
             success: function(data){
                 $('.input-recipe-ingredient').html(data);
+                for(var i = 0; i < selectedItems.length; i++){
+                    ingredientElements[i].val(selectedItems[i]);
+                };
             }
         });
 }

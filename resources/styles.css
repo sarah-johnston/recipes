@@ -84,19 +84,95 @@ ul.navigation-bar .search-btn {
 /***********
 New Recipes
 *************/
-form#new-recipe{
+div#new-recipe-page{
     width: 500px;
+    max-width: 500px;
+    margin-left: 10px;
 }
+
+div#new-ingredient-form,
+div#new-unit-form{
+    width: 400px;;
+    position: fixed;
+    max-width: inherit;
+    top: 200px;
+    left: 100px;
+    display: none;
+    z-index: 3;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0 20px 20px 20px;
+}
+
+div#new-unit-form input,
+div#new-ingredient-form input{
+    background-color: rgb(230, 230, 230);
+    display: inline-block;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+div#new-unit-form input#new-unit-name{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+
+div#new-recipe-page select{
+    display: inline-block;
+    height: 25px;
+    outline: none;
+    color: #74646e;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background: #fff;
+}
+
+div#new-ingredient-form div.ingredient-input{
+    margin-bottom: 10px;
+}
+
+div#cancel-add-ingredient,
+div#cancel-add-unit
+{
+    border-radius: 0;
+    width: 30px;
+    height: 30px;
+    float:right;
+    margin-top:-60px;
+    margin-right:-20px;
+    cursor:pointer;
+    color: rgb(0, 153, 153);
+    border: none;
+    background: none;
+    font-size: 24px;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+}
+
+div#cancel-add-unit{
+    margin-top:-20px;
+}
+
+div#cancel-add-ingredient:hover,
+div#cancel-add-unit:hover{
+    color: rgb(0, 102, 153);
+}
+
 form#new-recipe input{
-  background-color: #f1f1f1;
+  background-color: rgb(230, 230, 230);
   font-size: 16px;
-  margin-bottom: 16px;
   border:#000;
   display: inline;
 }
-form#new-recipe input.ingredient-amount, 
-form#new-recipe input.delete-ingredient{
+
+form#new-recipe input.ingredient-amount{
     margin-bottom: 0;
+    height: 25px;
+}
+table#ingredients-table input{
+    margin-bottom:0;
 }
 form#new-recipe input.ingredient-amount:hover,
 form#new-recipe input#input-recipe-name:hover,
@@ -105,26 +181,57 @@ form#new-recipe input#new-unit-name:hover{
     color: #000;
     text-decoration: none;
 }
-form#new-recipe input#add-new-ingredient{
-    margin-top: 8px;
+form#new-recipe div#add-new-ingredient{
+    position:relative;
+    top: -5px;
+    left:5px;
+    width: 20px;
+    margin-bottom: 5px;
+    font-size: 28px;
 }
-form#new-recipe input#add-new-ingredient,
-form#new-recipe input.delete-ingredient,
-button#create-ingredient{
-    color: white;
-    background-color: rgb(0, 153, 153);
+form#new-recipe div.delete-ingredient{
+    position: relative;
+    top: -3px;
+    left: -5px;
+    font-size: 24px;
 }
-form#new-recipe input#add-new-ingredient:hover,
-form#new-recipe input.delete-ingredient:hover,
-button#create-ingredient{
+form#new-recipe div.delete-ingredient,
+form#new-recipe div#add-new-ingredient{
+    font-family: Comic Sans MS;
+    color: rgb(0, 153, 153);
+    font-weight: bold;
+    background-color: white;
+}
+form#new-recipe div#add-new-ingredient:hover,
+form#new-recipe div.delete-ingredient:hover{
     text-decoration: none;
-    background-color: rgb(0, 102, 153);
+    color: rgb(0, 102, 153);
+    cursor:pointer;
 }
-button#create-ingredient{
+
+div#new-ingredient-form input:hover,
+div#new-unit-form input:hover{ 
+    color: black;
+    text-decoration: none;
+}
+
+button#create-ingredient, 
+button#create-unit{
+    font-size:13px;
     color: white;
     background-color: rgb(0, 153, 153);
     border: none;
-    padding: 4px 2px 4px 2px;
+    padding: 4px 4px 4px 4px;
+    margin-right: 4px;
+    text-decoration: none;
+    position: relative;
+    bottom: 340px;
+}
+button#create-ingredient:hover,
+button#create-unit:hover{
+    border-radius: 3px;
+    background-color: rgb(0, 102, 153);
+    cursor: pointer;
 }
 form#new-recipe input#submit-new-recipe{
     color: white;
@@ -133,6 +240,7 @@ form#new-recipe input#submit-new-recipe{
 form#new-recipe input#submit-new-recipe:hover{
     text-decoration: none;
     background-color: rgb(0, 153, 153);
+    cursor: pointer;
 }
 form#new-recipe input.ingredient-amount{
     width: 50px;
@@ -159,11 +267,8 @@ table#ingredients-table td, table#ingredients-table tbody{
 table#ingredients-table{
     border-spacing: 5px 5px;
 }
-table#ingredients-table td{
-    padding-bottom: 5px;
-}
 textarea#input-recipe-method{
-    background-color: #f1f1f1;  
+    background-color: rgb(230, 230, 230);
     border: none;
     display: block;
     width:100%;
@@ -172,6 +277,10 @@ textarea#input-recipe-method{
     resize: none;
     font-family: sans-serif;
 }
+div#recipe-method{
+    padding-top:30px;
+}
+
 #new-table-row{
     display: none;
 }
@@ -187,36 +296,35 @@ form#new-recipe p#recipe-amounts-required{
     padding-bottom: 50px;
 }
 
-button#create-ingredient:hover{
-    border-radius: 3px;
-    background-color: rgb(0, 102, 153);
-}
-
-div#new-ingredient-ninja,
-div#new-unit-ninja{
-    position: absolute;
-    display: none;
-    z-index: 3;
-    background-color: white;
-    border-radius: 5px;
-    margin: 5px 5px 5px 5px;
-    padding: 10px 10px 10px 10px;
-}
-
 form#new-recipe button{
     color: white;
     border: medium none;
     padding: 4px 2px;
     background-color: rgb(0, 153, 153);
 }
+form#new-recipe input{
+    min-height:25px;
+}
 form#new-recipe button:hover{
     text-decoration: none;
     background-color: rgb(0, 102, 153);
 }
 
-input#new-unit-name,
-input#new-ingredient-name{
-    margin-top: 10px;
+button#add-ingredient-button,
+button#add-unit-button{
+    float: right;
+    color: white;
+    border: medium none;
+    font-size: 16px;
+    padding: 6px 6px 6px 6px;
+    background-color: rgb(0, 153, 153);
+}
+
+button#add-ingredient-button:hover,
+button#add-unit-button:hover{
+    text-decoration: none;
+    background-color: rgb(0, 102, 153);
+    cursor: pointer;
 }
 
 /******************************
@@ -253,4 +361,48 @@ button#delete-recipe:hover{
     background: rgba(51,51,51,0.7);
     z-index: 2;
     display: none;
+}
+
+/*************************************
+*   Testing
+**************************************/
+
+div#div1{
+
+
+
+}
+div#div2{
+
+
+
+ }
+div#div3{
+
+    float:right;
+
+
+}
+div#div4{
+    
+    float:right;
+
+}
+div#div5{
+    float:left;
+    clear:left;
+}
+div#all{
+    max-width: 20%;
+    width: 20%;
+    position: relative;
+}
+
+div#all div{
+    width: 10%;
+    display: inline-block;
+    text-align: center;
+    border: 3px solid green;
+    padding: 5px;
+    
 }
