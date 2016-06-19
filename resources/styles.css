@@ -6,9 +6,11 @@ body {
     font-family: Trebuchet MS;
     color: rgb(51, 51, 51);
     background-color: rgb(251, 252, 254);
+    margin:0px;
 }
 div.page{
     width: 1500px;
+    margin-left:10px;
 }
 div.background-image{
     background: url("octopus.png") no-repeat;
@@ -16,11 +18,11 @@ div.background-image{
     display:inline-block;
     width: 700px;
     height: 700px;
-    float:right;
+/*    float:center;*/
 }
 div.page-body{
     float:left;
-    width: 700px;
+    width: 600px;
 }
 h1 {
     color: rgb(0, 153, 153);
@@ -82,23 +84,16 @@ p.no_results{
 /*************************
 * Recipes List Page      *
 **************************/
-div#recipes-list-page{
-    margin-left: 10px;    
-}
+
 
 /*********************************
 * Recipes Collections List Page  *
 *********************************/
-div#recipe-collections-page{
-    margin-left: 10px;    
-}
 
 /********************
 * Home Page         *
 ********************/
-div#home-page{
-    margin-left: 10px;
-}
+
 
 /********************
 * Search results
@@ -107,9 +102,7 @@ h3#recipes, h3#recipe-collections{
     margin-bottom: 20px;
 }
 
-div#search-results-page{
-    margin-left: 10px;
-}
+
 p#search-results-for{
     color: rgb(0, 153, 153);
     margin-top: 30px;
@@ -168,8 +161,8 @@ New Recipes
 *************/
 div#new-recipe-page{
     width: 500px;
+    margin-right: 100px;
     max-width: 500px;
-    margin-left: 10px;
 }
 
 div#new-recipe-page td#amount input{
@@ -470,5 +463,59 @@ button#delete-recipe:hover{
 * New Recipe Collection Page *
 ******************************/
 div#new-recipe-collection-page{
-    margin-left: 10px;
+    width: 500px;
+    margin-right: 100px;
+    max-width: 500px;
+}
+div#new-recipe-collection-page select{
+    display: inline-block;
+    height: 25px;
+    outline: none;
+    color: #74646e;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background: #fff;
+}
+form#new-recipe-collection input{
+  background-color: rgb(230, 230, 230);
+  font-size: 16px;
+  border:#000;
+  display: inline;
+}
+form#new-recipe-collection div#add-new-recipe{
+    position:relative;
+    top: -5px;
+    left:5px;
+    width: 20px;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+form#new-recipe-collection div.delete-recipe{
+    font-family: Comic Sans MS;
+    color: rgb(0, 153, 153);
+    font-weight: bold;
+    background-color: white;
+    position: relative;
+    top: -3px;
+    left: -5px;
+    font-size: 24px;
+}
+form#new-recipe-collection div#add-new-recipe:hover,
+form#new-recipe-collection div#delete-recipe:hover{
+    text-decoration: none;
+    color: rgb(0, 102, 153);
+    cursor:pointer;
+}
+form#new-recipe-collection input#submit-new-recipe-collection{
+    color: white;
+    background-color: rgb(0, 102, 153);
+}
+form#new-recipe-collection input#submit-new-recipe-collection:hover{
+    text-decoration: none;
+    background-color: rgb(0, 153, 153);
+    cursor: pointer;
+}
+#new-recipe-row{
+    display: none;
 }

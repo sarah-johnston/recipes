@@ -18,8 +18,11 @@
             }
             if(!empty($_POST["recipe_method"])){
                 $method = $_POST["recipe_method"];
-                $recipe_method = nl2br($method);
-                $log->info("Recipe method: " . $recipe_method);
+                nl2br($method);
+                $log->info("Recipe method: " . $method);
+            }
+            else{
+            $method = "";
             }
             if(!empty($_POST["ingredients"])){
                 $ingredients = $_POST["ingredients"];
@@ -46,7 +49,7 @@
             $recipe_id = $new_recipe->addNewRecipe($recipe_name, $ingredients_details, $method);
             }
     ?>
-        <form action='recipe.php' method='POST' name='frm'>
+        <form action='recipe.php' method='GET' name='frm'>
             <input type="hidden" name="id" value="<?=$recipe_id?>" />
         </form>
         <script language="JavaScript">

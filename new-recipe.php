@@ -50,8 +50,7 @@
             });
         });
     </script>
-    </head>
-    
+    </head>    
     <body>
         <?php include('templates/navigation-bar.php'); ?>
         <div class="page">
