@@ -13,7 +13,7 @@ class searchResults extends recipeList {
         parent::__construct($db, $conn);
         $this->db = $db;
         $this->conn = $conn;
-        $this->search_text = mysqli_real_escape_string($conn, $_POST['search_text']);
+        $this->search_text = mysqli_real_escape_string($conn, $_GET['search_text']);
         $this->log = Logger::getLogger(__CLASS__);
         $this->log->info("Searched for '" . $this->search_text . "'.");
     }

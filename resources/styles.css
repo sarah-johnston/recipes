@@ -1,10 +1,14 @@
+/*******************
+* All pages
+********************/
+
 body {
     background: url("octopus.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: sans-serif;
+    font-family: Trebuchet MS;
     color: rgb(51, 51, 51);
 }
 h1 {
@@ -12,23 +16,30 @@ h1 {
     font-family: Segoe UI;
 }
 h3 {
-    font-family: Segoe UI;
+    font-family: Trebuchet MS;
     color: rgb(0, 102, 153);
-}
-h3[class='method']{
-    color: rgb(77, 77, 77);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 h4{
-    font-family: Segoe UI;
-    color: rgb(51, 51, 153);
+    font-family: Trebuchet MS;
+    color:rgb(51, 153, 255);
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 1px;
 }
 input {
+  font-family: Trebuchet MS;
   background: none;
   border: none;
   font-size: 16px;
   margin-bottom: 5px;
   display: block;
   border-radius: 3px;
+}
+p{
+    margin-top:3px;
 }
 input:focus{
     outline:0;
@@ -37,6 +48,7 @@ textarea:focus{
     outline:0;
 }
 button{
+  font-family: Trebuchet MS;
   border-radius: 3px;  
 }
 
@@ -44,23 +56,54 @@ input:hover {
     color: rgb(0, 102, 153);
     text-decoration: underline;
 }
+input.recipe-link,
+input.recipe-collection-link{
+    font-family: Trebuchet MS;
+}
+input.recipe-link:hover,
+input.recipe-collection-link:hover{
+    cursor:pointer;
+}
+
+p.no_results{
+    margin-left: 5px;
+}
 /*************************
 * Recipes List Page      *
 **************************/
-div#recipes-list-page input:hover{
-    cursor:pointer;
+div#recipes-list-page{
+    margin-left: 10px;    
 }
+
 /*********************************
 * Recipes Collections List Page  *
 *********************************/
-div#recipe-collections-page input:hover{
-    cursor:pointer;
+div#recipe-collections-page{
+    margin-left: 10px;    
 }
+
 /********************
 * Home Page         *
 ********************/
-div#home-page input:hover{
-    cursor:pointer;
+div#home-page{
+    margin-left: 10px;
+}
+
+/********************
+* Search results
+********************/
+h3#recipes, h3#recipe-collections{
+    margin-bottom: 20px;
+}
+
+div#search-results-page{
+    margin-left: 10px;
+}
+p#search-results-for{
+    color: rgb(0, 153, 153);
+    margin-top: 30px;
+    font-size: 15px;
+   
 }
 
 
@@ -71,7 +114,7 @@ ul.navigation-bar{
     background-color: #f1f1f1;
     padding: 8px 0 8px 0;
     list-style-type: none;
-    font-family: sans-serif;
+    font-family: Trebuchet MS;
     margin: 0;
 }
 ul.navigation-bar li{
@@ -118,6 +161,10 @@ div#new-recipe-page{
     margin-left: 10px;
 }
 
+div#new-recipe-page td#amount input{
+    padding-left:3px;
+}
+
 div#new-ingredient-form,
 div#new-unit-form{
     width: 400px;;
@@ -139,12 +186,19 @@ div#new-ingredient-form input{
     min-height: 20px;
     margin-bottom: 10px;
 }
+div#new-unit-form h3,
+div#new-ingredient-form h3{
+    margin-bottom: 20px;
+}
 
 div#new-unit-form input#new-unit-name{
-    margin-top: 10px;
     margin-bottom: 0px;
 }
 
+textarea#input-recipe-method{
+    font-family: Trebuchet MS !important;
+    font-size: 16px;
+}
 
 div#new-recipe-page select{
     display: inline-block;
@@ -253,7 +307,7 @@ button#create-unit{
     margin-right: 4px;
     text-decoration: none;
     position: relative;
-    bottom: 340px;
+    bottom: 310px;
 }
 button#create-ingredient:hover,
 button#create-unit:hover{
@@ -305,9 +359,6 @@ textarea#input-recipe-method{
     resize: none;
     font-family: sans-serif;
 }
-div#recipe-method{
-    padding-top:30px;
-}
 
 #new-table-row{
     display: none;
@@ -317,11 +368,27 @@ div#recipe-method{
 }
 
 div#name p#recipe-name-required,
-form#new-recipe p#recipe-amounts-required{
+form#new-recipe p#recipe-amounts-required,
+form#new-recipe p#recipe-amounts-numerical,
+p#new-ingredient-name-required,
+p#new-ingredient-name-exists,
+p#new-unit-name-required,
+p#new-unit-name-text,
+p#new-ingredient-name-text,
+p#new-unit-name-exists
+{
     color: red;
     display: none;
-    margin-bottom: 50px;
-    padding-bottom: 50px;
+    margin-bottom:0px;
+}
+p#new-ingredient-name-required,
+p#new-ingredient-name-text,
+p#new-ingredient-name-exists,
+p#new-unit-name-required,
+p#new-unit-name-text,
+p#new-unit-name-exists{
+margin-top:-15px;
+margin-bottom: 15px;
 }
 
 form#new-recipe button{
@@ -391,46 +458,10 @@ button#delete-recipe:hover{
     display: none;
 }
 
-/*************************************
-*   Testing
-**************************************/
 
-div#div1{
-
-
-
-}
-div#div2{
-
-
-
- }
-div#div3{
-
-    float:right;
-
-
-}
-div#div4{
-    
-    float:right;
-
-}
-div#div5{
-    float:left;
-    clear:left;
-}
-div#all{
-    max-width: 20%;
-    width: 20%;
-    position: relative;
-}
-
-div#all div{
-    width: 10%;
-    display: inline-block;
-    text-align: center;
-    border: 3px solid green;
-    padding: 5px;
-    
+/*****************************
+* New Recipe Collection Page *
+******************************/
+div#new-recipe-collection-page{
+    margin-left: 10px;
 }

@@ -1,7 +1,7 @@
 <?php 
     if($is_collection){
         ?>
-<h4>for <?=$recipe_name?>:</h4>
+<h4>For <?=$recipe_name?>:</h4>
 <?php
     }
     foreach ($recipe_ingredients as $ingredient){
