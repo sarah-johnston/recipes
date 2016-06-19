@@ -22,7 +22,7 @@ class newRecipe {
      */
     function getAllIngredients(){
         $this->log->info("Getting the list of all available ingredients.");
-        $sql = "SELECT recipe_ingredient, recipe_ingredient_id FROM ingredients";
+        $sql = "SELECT recipe_ingredient, recipe_ingredient_id FROM ingredients ORDER BY recipe_ingredient ASC";
         return $this->db->runQuery($this->conn, $sql);
     }
     
@@ -33,10 +33,21 @@ class newRecipe {
      */
     function getAllUnits(){
         $this->log->info("Getting the list of all available units.");
-        $sql = "SELECT unit_name, unit_id FROM units";
+        $sql = "SELECT unit_name, unit_id FROM units ORDER BY unit_name ASC";
         return $this->db->runQuery($this->conn, $sql);
     }
     
+    /**
+     * Returns all available types of units in the database.
+     * 
+     * @return type : Array of all unit type IDs and names in the database.
+     */
+    function getAllUnitTypes(){
+        $this->log->info("Getting the list of all available unit types.");
+        $sql = "SELECT unit_type, unit_type_id FROM unit_types";
+        return $this->db->runQuery($this->conn, $sql);
+    }
+
     /**
      * Returns a list of all available ingredients and their IDs.
      * 
@@ -81,6 +92,28 @@ class newRecipe {
             return [""];
         }
         return $units;
+    }
+    
+    /**
+     * Returns a list of all available unit types and their IDs.
+     * 
+     * @return type : Array of all unit type IDs and names in the database.
+     */
+    function generateUnitTypesList(){
+        $unit_types_list = self::getAllUnitTypes();
+        $unit_types = array();
+        if (mysqli_num_rows($unit_types_list) > 0){
+            while($row = mysqli_fetch_assoc($unit_types_list)){
+                $unit_types[$row['unit_type_id']] = $row['unit_type'];
+            }
+            $this->log->trace("Found ingredients:");
+            $this->log->trace($unit_types);
+            return $unit_types;
+        }
+        else{
+            $this->log->warn("Did not find any available ingredients.");
+            return [""];
+        }
     }
     
     /**

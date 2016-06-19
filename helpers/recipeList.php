@@ -38,7 +38,7 @@ class recipeList {
         }
         else{
             $this->log->info("Did not find any recipes that matched the query.");
-            $recipeList[""] = "0 results";
+            $recipeList = null;
         }
         return $recipeList;
     }
@@ -57,7 +57,7 @@ class recipeList {
         }
         else{
             $this->log->info("Did not find any recipe collections that matched the query.");
-            $collectionsList[""] = "0 results";
+            $collectionsList = null;
         }
         return $collectionsList;
     }

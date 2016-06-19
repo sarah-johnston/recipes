@@ -12,7 +12,7 @@ class recipePage {
     function __construct($db, $conn) {
         $this->db = $db;
         $this->conn = $conn;
-        $this->id = mysqli_real_escape_string($conn, $_POST['id']);
+        $this->id = mysqli_real_escape_string($conn, $_GET['id']);
         $this->log = Logger::getLogger(__CLASS__);
     }
     

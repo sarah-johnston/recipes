@@ -1,5 +1,5 @@
 <ul class="navigation-bar">
-<form method="POST" id="searchform" action="search-results.php">
+<form method="GET" id="searchform" action="search-results.php">
     <li class="navigation-options">
         <a href="index.php" class="navigate-to">Home</a>
         <a href="recipes.php" class="navigate-to">Recipes</a>
