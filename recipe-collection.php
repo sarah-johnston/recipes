@@ -16,28 +16,31 @@
     </head>
     <body>
         <?php include('templates/navigation-bar.php'); ?>
-        <div>
-        <h1 id="collection-name"><?=$collection_name?></h1>
-        <h3>Ingredients</h3>
-        <?php 
-        foreach ($collection_recipe_details as $recipe){
-            $recipe_ingredients = $recipe["ingredients"];
-            $recipe_name = $recipe["name"];
-        ?>
-        <table>
-            <?php include("templates/ingredients.php")?>
-        </table>
-        <?php
-        }
-        ?>
-        <h3 class="method">Method</h3>
-        <?php
-        foreach ($collection_recipe_details as $recipe){
-            $recipe_method = $recipe["method"];
-            $recipe_name = $recipe["name"];
-        include("templates/method.php");
-        }
-        ?>
+        <div class="page">
+            <div class="background-image"></div>
+            <div id="recipe-collection" class="page-body">
+            <h1 id="collection-name"><?=$collection_name?></h1>
+            <h3>Ingredients</h3>
+            <?php 
+            foreach ($collection_recipe_details as $recipe){
+                $recipe_ingredients = $recipe["ingredients"];
+                $recipe_name = $recipe["name"];
+            ?>
+            <table>
+                <?php include("templates/ingredients.php")?>
+            </table>
+            <?php
+            }
+            ?>
+            <h3 class="method">Method</h3>
+            <?php
+            foreach ($collection_recipe_details as $recipe){
+                $recipe_method = $recipe["method"];
+                $recipe_name = $recipe["name"];
+            include("templates/method.php");
+            }
+            ?>
+            </div>
         </div>
     </body>
 </html>

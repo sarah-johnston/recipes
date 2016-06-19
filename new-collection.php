@@ -15,11 +15,12 @@
     </head>
     <body>
         <?php include('templates/navigation-bar.php'); ?>
-        <div id="new-recipe-collection-page">
-            <div id="overlay"></div>
-            <h1 class="title">Create New Recipe Collection</h1>
-            
+        <div class="page">
+            <div class="background-image"></div>
+            <div id="new-recipe-collection-page" class="page-body">
+                <div id="overlay"></div>
+                <h1 class="title">Create New Recipe Collection</h1>
+                </div>
             </div>
-        </div>
     </body>
 </html

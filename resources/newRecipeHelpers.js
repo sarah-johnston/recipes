@@ -173,6 +173,10 @@ function validateAmounts(){
     var amounts = document.querySelectorAll('#new-recipe .ingredient-amount');
     var amounts_valid = true;
     var amounts_present = true;
+    
+    // Set defaults (validation messages hidden, background grey).
+    document.getElementById('recipe-amounts-required').style.display='none';
+    document.getElementById('recipe-amounts-numerical').style.display='none'
    
     for (var i = 0; i < amounts.length; i++) {
         var amount_present = true;
@@ -180,10 +184,12 @@ function validateAmounts(){
         if((amounts[i].value === "")||(amounts[i].value === null)){ 
             amount_present = false;
             amounts_present = false;
+            document.getElementById('recipe-amounts-required').style.display='inline';
         }
         if(isNaN(amounts[i].value)){ 
             amount_valid = false;
             amounts_valid = false;
+            document.getElementById('recipe-amounts-numerical').style.display='block';
         }
         if(!amount_present || !amount_valid){
             amounts[i].style.background = "rgb(255, 204, 204)";
@@ -193,18 +199,6 @@ function validateAmounts(){
         }
     }
 
-    if(!amounts_present){
-        document.getElementById('recipe-amounts-required').style.display='inline';
-    }
-    else{
-        document.getElementById('recipe-amounts-required').style.display='none';
-    }
-    if(!amounts_valid){
-        document.getElementById('recipe-amounts-numerical').style.display='block';
-    }
-    else{
-        document.getElementById('recipe-amounts-numerical').style.display='none';
-    }
     return (amounts_present && amounts_valid);
 }
 
