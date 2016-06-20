@@ -81,18 +81,20 @@ input.recipe-collection-link:hover{
 p.no_results{
     margin-left: 5px;
 }
-/*************************
-* Recipes List Page      *
-**************************/
-
-
-/*********************************
-* Recipes Collections List Page  *
-*********************************/
-
-/********************
-* Home Page         *
-********************/
+/**************************
+* Recipes Collection Page *
+***************************/
+button#delete-recipe-collection{
+    color: white;
+    background-color: rgb(0, 102, 153);
+    border: none;
+    padding: 4px 2px 4px 2px;
+    font-size:16px;
+    min-height: 25px;
+}
+button#delete-recipe-collection:hover{
+    background-color: rgb(0, 153, 153);
+}
 
 
 /********************
@@ -438,6 +440,8 @@ button#delete-recipe{
     background-color: rgb(0, 102, 153);
     border: none;
     padding: 4px 2px 4px 2px;
+    font-size:16px;
+    min-height: 25px;
 }
 button#delete-recipe:hover{
     background-color: rgb(0, 153, 153);
@@ -486,6 +490,7 @@ form#new-recipe-collection input{
 }
 form#new-recipe-collection input#input-collection-name{
     width: 100%;
+    padding-left: 5px;
 }
 form#new-recipe-collection input#input-collection-name:hover{
     color: #000;
@@ -531,6 +536,11 @@ p#collection-name-required{
     color: red;
     display: none;
     margin-bottom:10px;
+}
+p#no-duplicate-recipes{
+    color: red;
+    margin-bottom: 0;
+    display: none;
 }
 form#new-recipe-collection div#name,
 form#new-recipe-collection div#recipes{

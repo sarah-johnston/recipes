@@ -40,6 +40,11 @@
             include("templates/method.php");
             }
             ?>
+            <form action="collection-deleted.php" method="POST" 
+                  onSubmit="return confirm('Are you sure you want to delete this recipe collection? This will not delete the individual recipes in the collection.')">
+                <input type="hidden" name="delete_recipe_collection" value="<?=$collection->getCurrentCollectionId()?>" />
+               <button id="delete-recipe-collection" type="submit" name="submit">Delete collection</button>
+            </form>
             </div>
         </div>
     </body>
