@@ -482,11 +482,20 @@ form#new-recipe-collection input{
   font-size: 16px;
   border:#000;
   display: inline;
+  min-height: 25px;
+}
+form#new-recipe-collection input#input-collection-name{
+    width: 100%;
+}
+form#new-recipe-collection input#input-collection-name:hover{
+    color: #000;
+    text-decoration: none;
 }
 form#new-recipe-collection div#add-new-recipe{
-    position:relative;
-    top: -5px;
-    left:5px;
+    font-family: Comic Sans MS;
+    color: rgb(0, 153, 153);
+    font-weight: bold;
+    font-size: 24px;
     width: 20px;
     margin-bottom: 5px;
     font-size: 28px;
@@ -496,13 +505,12 @@ form#new-recipe-collection div.delete-recipe{
     color: rgb(0, 153, 153);
     font-weight: bold;
     background-color: white;
-    position: relative;
-    top: -3px;
-    left: -5px;
+    display: inline;
+    margin-left: 5px;
     font-size: 24px;
 }
 form#new-recipe-collection div#add-new-recipe:hover,
-form#new-recipe-collection div#delete-recipe:hover{
+form#new-recipe-collection div.delete-recipe:hover{
     text-decoration: none;
     color: rgb(0, 102, 153);
     cursor:pointer;
@@ -518,4 +526,29 @@ form#new-recipe-collection input#submit-new-recipe-collection:hover{
 }
 #new-recipe-row{
     display: none;
+}
+p#collection-name-required{
+    color: red;
+    display: none;
+    margin-bottom:10px;
+}
+form#new-recipe-collection div#name,
+form#new-recipe-collection div#recipes{
+    display: table;
+    width: 100%;
+}
+form#new-recipe-collection div#recipes{
+    margin-top:20px;
+}
+h3#new-collection-name{
+    display: table-cell;
+    width: 180px;
+    padding: 0;
+    margin: 0;
+}
+h3#new-collection-recipes{
+    display: table-cell;
+    width: 100px;
+    padding: 0;
+    margin: 0;
 }
