@@ -18,7 +18,9 @@
     </head>
     <body>
         <?php include('templates/navigation-bar.php'); ?>
-        <div id="recipe">
+        <div class="page">
+            <div class="background-image"></div>
+            <div id="recipe" class="page-body">
             <h1 id="recipe-name" class="title"><?=$recipe_name?>
             </h1>
             <h3 class="heading" id="ingredients-heading">Ingredients</h3>
@@ -31,6 +33,7 @@
                 <input type="hidden" name="delete_recipe" value="<?=$recipe->getCurrentRecipeId()?>" />
                <button id="delete-recipe" type="submit" name="submit">Delete recipe</button>
             </form>
+            </div>
         </div>
     </body>
 </html>

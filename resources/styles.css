@@ -3,13 +3,26 @@
 ********************/
 
 body {
-    background: url("octopus.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     font-family: Trebuchet MS;
     color: rgb(51, 51, 51);
+    background-color: rgb(251, 252, 254);
+    margin:0px;
+}
+div.page{
+    width: 1500px;
+    margin-left:10px;
+}
+div.background-image{
+    background: url("octopus.png") no-repeat;
+    background-size: 100%;
+    display:inline-block;
+    width: 700px;
+    height: 700px;
+/*    float:center;*/
+}
+div.page-body{
+    float:left;
+    width: 600px;
 }
 h1 {
     color: rgb(0, 153, 153);
@@ -71,23 +84,16 @@ p.no_results{
 /*************************
 * Recipes List Page      *
 **************************/
-div#recipes-list-page{
-    margin-left: 10px;    
-}
+
 
 /*********************************
 * Recipes Collections List Page  *
 *********************************/
-div#recipe-collections-page{
-    margin-left: 10px;    
-}
 
 /********************
 * Home Page         *
 ********************/
-div#home-page{
-    margin-left: 10px;
-}
+
 
 /********************
 * Search results
@@ -96,9 +102,7 @@ h3#recipes, h3#recipe-collections{
     margin-bottom: 20px;
 }
 
-div#search-results-page{
-    margin-left: 10px;
-}
+
 p#search-results-for{
     color: rgb(0, 153, 153);
     margin-top: 30px;
@@ -157,8 +161,8 @@ New Recipes
 *************/
 div#new-recipe-page{
     width: 500px;
+    margin-right: 100px;
     max-width: 500px;
-    margin-left: 10px;
 }
 
 div#new-recipe-page td#amount input{
@@ -425,10 +429,6 @@ button#add-unit-button:hover{
 /******************************
 * Recipes
 ******************************/
-div#recipe{
-    width: 700px;   
-}
-
 div#recipe button#recipe-options{
     float: right;
 }
@@ -463,5 +463,92 @@ button#delete-recipe:hover{
 * New Recipe Collection Page *
 ******************************/
 div#new-recipe-collection-page{
-    margin-left: 10px;
+    width: 500px;
+    margin-right: 100px;
+    max-width: 500px;
+}
+div#new-recipe-collection-page select{
+    display: inline-block;
+    height: 25px;
+    outline: none;
+    color: #74646e;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background: #fff;
+}
+form#new-recipe-collection input{
+  background-color: rgb(230, 230, 230);
+  font-size: 16px;
+  border:#000;
+  display: inline;
+  min-height: 25px;
+}
+form#new-recipe-collection input#input-collection-name{
+    width: 100%;
+}
+form#new-recipe-collection input#input-collection-name:hover{
+    color: #000;
+    text-decoration: none;
+}
+form#new-recipe-collection div#add-new-recipe{
+    font-family: Comic Sans MS;
+    color: rgb(0, 153, 153);
+    font-weight: bold;
+    font-size: 24px;
+    width: 20px;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+form#new-recipe-collection div.delete-recipe{
+    font-family: Comic Sans MS;
+    color: rgb(0, 153, 153);
+    font-weight: bold;
+    background-color: white;
+    display: inline;
+    margin-left: 5px;
+    font-size: 24px;
+}
+form#new-recipe-collection div#add-new-recipe:hover,
+form#new-recipe-collection div.delete-recipe:hover{
+    text-decoration: none;
+    color: rgb(0, 102, 153);
+    cursor:pointer;
+}
+form#new-recipe-collection input#submit-new-recipe-collection{
+    color: white;
+    background-color: rgb(0, 102, 153);
+}
+form#new-recipe-collection input#submit-new-recipe-collection:hover{
+    text-decoration: none;
+    background-color: rgb(0, 153, 153);
+    cursor: pointer;
+}
+#new-recipe-row{
+    display: none;
+}
+p#collection-name-required{
+    color: red;
+    display: none;
+    margin-bottom:10px;
+}
+form#new-recipe-collection div#name,
+form#new-recipe-collection div#recipes{
+    display: table;
+    width: 100%;
+}
+form#new-recipe-collection div#recipes{
+    margin-top:20px;
+}
+h3#new-collection-name{
+    display: table-cell;
+    width: 180px;
+    padding: 0;
+    margin: 0;
+}
+h3#new-collection-recipes{
+    display: table-cell;
+    width: 100px;
+    padding: 0;
+    margin: 0;
 }
