@@ -83,6 +83,12 @@ class recipeCollectionPage {
         return self::getCollectionName($this->id);
     }
     
+    
+    function getCurrentCollectionId(){
+        $this->log->info("Getting the ID of the current recipe collection.");
+        return $this->id;
+    }
+    
     /**
      * 
      * @return type
