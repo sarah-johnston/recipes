@@ -94,6 +94,7 @@ button#delete-recipe-collection{
 }
 button#delete-recipe-collection:hover{
     background-color: rgb(0, 153, 153);
+	cursor: pointer;
 }
 
 
@@ -445,6 +446,7 @@ button#delete-recipe{
 }
 button#delete-recipe:hover{
     background-color: rgb(0, 153, 153);
+	cursor: pointer;
 }
 
 
